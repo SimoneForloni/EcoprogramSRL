@@ -5,13 +5,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galleria - Ecoprogram</title>
+  <meta name="description"
+    content="Esplora la galleria di Ecoprogram: progetti di giardinaggio, pulizie e servizi speciali realizzati con professionalità e cura.">
   <link rel="icon" type="image/png" href="../img/logo.png">
   <link rel="stylesheet" href="../style/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="../script/main.js"></script>
+  <script src="../script/gallery.js"></script>
+
+  <!-- Preload critical images -->
+  <link rel="preload" as="image" href="../img/gallery/giardino-1.jpg">
+  <link rel="preload" as="image" href="../img/gallery/pulizie-1.jpg">
+  <link rel="preload" as="image" href="../img/gallery/speciali-1.jpg">
 </head>
 
 <body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
+
   <!-- Header -->
   <header class="header">
     <nav class="navbar">
@@ -71,128 +82,203 @@
   </header>
 
   <!-- Gallery Page Content -->
-  <main class="gallery-page">
+  <main class="gallery-page" id="main-content">
     <div class="gallery-hero">
-      <h1>Galleria</h1>
-      <p class="subtitle">Scopri i nostri lavori attraverso le immagini dei progetti realizzati</p>
+      <h1>La Nostra Galleria</h1>
+      <p class="subtitle">Esplora i nostri progetti e lavori attraverso una raccolta di immagini che testimoniano la
+        qualità e la professionalità dei nostri servizi</p>
     </div>
 
     <!-- Gallery Filters -->
-    <section class="gallery-filters">
+    <section class="gallery-filters" aria-label="Filtri galleria">
       <h2>Filtra per Categoria</h2>
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">
-          <i class="fas fa-th"></i> Tutti
+      <div class="filter-buttons" role="group" aria-label="Filtri per categoria">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true" aria-label="Mostra tutti i progetti">
+          <i class="fas fa-th" aria-hidden="true"></i> Tutti i Progetti
         </button>
-        <button class="filter-btn" data-filter="giardinaggio">
-          <i class="fas fa-leaf"></i> Giardinaggio
+        <button class="filter-btn" data-filter="giardinaggio" aria-pressed="false"
+          aria-label="Filtra progetti di giardinaggio">
+          <i class="fas fa-leaf" aria-hidden="true"></i> Giardinaggio
         </button>
-        <button class="filter-btn" data-filter="pulizie">
-          <i class="fas fa-broom"></i> Pulizie
+        <button class="filter-btn" data-filter="pulizie" aria-pressed="false" aria-label="Filtra progetti di pulizie">
+          <i class="fas fa-broom" aria-hidden="true"></i> Pulizie
         </button>
-        <button class="filter-btn" data-filter="speciali">
-          <i class="fas fa-star"></i> Servizi Speciali
+        <button class="filter-btn" data-filter="speciali" aria-pressed="false" aria-label="Filtra servizi speciali">
+          <i class="fas fa-star" aria-hidden="true"></i> Servizi Speciali
         </button>
       </div>
     </section>
 
     <!-- Gallery Grid -->
-    <section class="gallery-grid">
+    <section class="gallery-grid" aria-label="Griglia progetti">
       <!-- Giardinaggio -->
-      <div class="gallery-item" data-category="giardinaggio">
-        <img src="../img/gallery/giardino-1.jpg" alt="Manutenzione giardino residenziale">
+      <article class="gallery-item" data-category="giardinaggio">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&q=80" type="image/webp">
+          <img data-src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&q=80"
+            alt="Manutenzione giardino residenziale" loading="lazy" width="400" height="300">
+        </picture>
         <div class="gallery-item-overlay">
           <h3>Manutenzione Giardino</h3>
-          <p>Progetto residenziale a Milano</p>
-          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+          <p>Progetto di manutenzione completa per un giardino residenziale a Milano, con particolare attenzione alla
+            cura del prato e delle piante ornamentali.</p>
         </div>
-      </div>
+        <button class="view-btn" aria-label="Visualizza dettagli manutenzione giardino">
+          <i class="fas fa-search-plus" aria-hidden="true"></i>
+        </button>
+      </article>
 
-      <div class="gallery-item" data-category="giardinaggio">
-        <img src="../img/gallery/giardino-2.jpg" alt="Progettazione spazio verde aziendale">
+      <article class="gallery-item" data-category="giardinaggio">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1598902108854-10e335adac99?w=800&q=80" type="image/webp">
+          <img data-src="https://images.unsplash.com/photo-1598902108854-10e335adac99?w=800&q=80"
+            alt="Progettazione spazio verde aziendale" loading="lazy" width="400" height="300">
+        </picture>
         <div class="gallery-item-overlay">
-          <h3>Progettazione Verde</h3>
-          <p>Spazio aziendale moderno</p>
-          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+          <h3>Progettazione Verde Aziendale</h3>
+          <p>Realizzazione di uno spazio verde moderno e sostenibile per la sede di un'importante azienda, con sistema
+            di irrigazione automatizzato.</p>
         </div>
-      </div>
+        <button class="view-btn" aria-label="Visualizza dettagli progettazione verde">
+          <i class="fas fa-search-plus" aria-hidden="true"></i>
+        </button>
+      </article>
 
-      <div class="gallery-item" data-category="giardinaggio">
-        <img src="../img/gallery/giardino-3.jpg" alt="Sistema di irrigazione automatico">
+      <article class="gallery-item" data-category="giardinaggio">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=800&q=80" type="image/webp">
+          <img data-src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=800&q=80"
+            alt="Sistema di irrigazione automatico" loading="lazy" width="400" height="300">
+        </picture>
         <div class="gallery-item-overlay">
-          <h3>Sistema Irrigazione</h3>
-          <p>Impianto automatizzato</p>
-          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+          <h3>Sistema Irrigazione Smart</h3>
+          <p>Installazione di un sistema di irrigazione intelligente con controllo remoto e sensori di umidità per
+            ottimizzare il consumo d'acqua.</p>
         </div>
-      </div>
+        <button class="view-btn" aria-label="Visualizza dettagli sistema irrigazione">
+          <i class="fas fa-search-plus" aria-hidden="true"></i>
+        </button>
+      </article>
 
       <!-- Pulizie -->
-      <div class="gallery-item" data-category="pulizie">
-        <img src="../img/gallery/pulizie-1.jpg" alt="Pulizia uffici">
+      <article class="gallery-item" data-category="pulizie">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" type="image/webp">
+          <img data-src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="Pulizia uffici"
+            loading="lazy" width="400" height="300">
+        </picture>
         <div class="gallery-item-overlay">
           <h3>Pulizia Uffici</h3>
-          <p>Servizio continuativo</p>
-          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+          <p>Servizio di pulizia professionale per uffici con particolare attenzione all'igienizzazione delle superfici
+            e degli spazi comuni.</p>
         </div>
-      </div>
+        <button class="view-btn" aria-label="Visualizza dettagli pulizia uffici">
+          <i class="fas fa-search-plus" aria-hidden="true"></i>
+        </button>
+      </article>
 
-      <div class="gallery-item" data-category="pulizie">
-        <img src="../img/gallery/pulizie-2.jpg" alt="Sanificazione ambienti">
+      <article class="gallery-item" data-category="pulizie">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=800&q=80" type="image/webp">
+          <img data-src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=800&q=80"
+            alt="Sanificazione ambienti" loading="lazy" width="400" height="300">
+        </picture>
         <div class="gallery-item-overlay">
-          <h3>Sanificazione</h3>
-          <p>Trattamento professionale</p>
-          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+          <h3>Sanificazione Professionale</h3>
+          <p>Trattamento di sanificazione completa con prodotti certificati e tecniche all'avanguardia per garantire la
+            massima sicurezza.</p>
         </div>
-      </div>
+        <button class="view-btn" aria-label="Visualizza dettagli sanificazione">
+          <i class="fas fa-search-plus" aria-hidden="true"></i>
+        </button>
+      </article>
 
-      <div class="gallery-item" data-category="pulizie">
-        <img src="../img/gallery/pulizie-3.jpg" alt="Pulizia vetrate">
+      <article class="gallery-item" data-category="pulizie">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&q=80" type="image/webp">
+          <img data-src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&q=80" alt="Pulizia vetrate"
+            loading="lazy" width="400" height="300">
+        </picture>
         <div class="gallery-item-overlay">
           <h3>Pulizia Vetrate</h3>
-          <p>Edificio commerciale</p>
-          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+          <p>Servizio specializzato per la pulizia di vetrate e facciate continue di edifici commerciali con
+            attrezzature professionali.</p>
         </div>
-      </div>
+        <button class="view-btn" aria-label="Visualizza dettagli pulizia vetrate">
+          <i class="fas fa-search-plus" aria-hidden="true"></i>
+        </button>
+      </article>
 
       <!-- Servizi Speciali -->
-      <div class="gallery-item" data-category="speciali">
-        <img src="../img/gallery/speciali-1.jpg" alt="Disinfestazione">
+      <article class="gallery-item" data-category="speciali">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1613323593608-abc90fec84ff?w=800&q=80" type="image/webp">
+          <img data-src="https://images.unsplash.com/photo-1613323593608-abc90fec84ff?w=800&q=80" alt="Disinfestazione"
+            loading="lazy" width="400" height="300">
+        </picture>
         <div class="gallery-item-overlay">
-          <h3>Disinfestazione</h3>
-          <p>Intervento mirato</p>
-          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+          <h3>Disinfestazione Mirata</h3>
+          <p>Intervento di disinfestazione professionale con prodotti eco-compatibili e tecniche specifiche per ogni
+            tipo di infestante.</p>
         </div>
-      </div>
+        <button class="view-btn" aria-label="Visualizza dettagli disinfestazione">
+          <i class="fas fa-search-plus" aria-hidden="true"></i>
+        </button>
+      </article>
 
-      <div class="gallery-item" data-category="speciali">
-        <img src="../img/gallery/speciali-2.jpg" alt="Trattamento superfici">
+      <article class="gallery-item" data-category="speciali">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1527689638836-411945a2b57c?w=800&q=80" type="image/webp">
+          <img data-src="https://images.unsplash.com/photo-1527689638836-411945a2b57c?w=800&q=80"
+            alt="Trattamento superfici" loading="lazy" width="400" height="300">
+        </picture>
         <div class="gallery-item-overlay">
           <h3>Trattamento Superfici</h3>
-          <p>Protezione speciale</p>
-          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+          <p>Applicazione di trattamenti protettivi speciali per pavimentazioni e superfici con prodotti di ultima
+            generazione.</p>
         </div>
-      </div>
+        <button class="view-btn" aria-label="Visualizza dettagli trattamento superfici">
+          <i class="fas fa-search-plus" aria-hidden="true"></i>
+        </button>
+      </article>
 
-      <div class="gallery-item" data-category="speciali">
-        <img src="../img/gallery/speciali-3.jpg" alt="Pulizia industriale">
+      <article class="gallery-item" data-category="speciali">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80" type="image/webp">
+          <img data-src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80"
+            alt="Pulizia industriale" loading="lazy" width="400" height="300">
+        </picture>
         <div class="gallery-item-overlay">
           <h3>Pulizia Industriale</h3>
-          <p>Stabilimento produttivo</p>
-          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+          <p>Servizio completo di pulizia e manutenzione per stabilimenti produttivi con macchinari specializzati.</p>
         </div>
-      </div>
+        <button class="view-btn" aria-label="Visualizza dettagli pulizia industriale">
+          <i class="fas fa-search-plus" aria-hidden="true"></i>
+        </button>
+      </article>
     </section>
 
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-      <button class="lightbox-close"><i class="fas fa-times"></i></button>
-      <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
-      <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox" id="lightbox" role="dialog" aria-label="Visualizzatore immagini" aria-hidden="true">
+      <div class="lightbox-overlay"></div>
+      <button class="lightbox-close" aria-label="Chiudi visualizzatore">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <button class="lightbox-prev" aria-label="Immagine precedente">
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button class="lightbox-next" aria-label="Immagine successiva">
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      </button>
       <div class="lightbox-content">
-        <img src="" alt="">
-        <div class="lightbox-caption">
+        <div class="lightbox-loading" aria-hidden="true">
+          <div class="spinner"></div>
+        </div>
+        <img src="" alt="" aria-describedby="lightbox-caption">
+        <div class="lightbox-caption" id="lightbox-caption">
           <h3></h3>
           <p></p>
+          <span class="lightbox-counter" aria-live="polite"></span>
         </div>
       </div>
     </div>
@@ -200,8 +286,9 @@
     <!-- CTA Section -->
     <section class="cta-section">
       <div class="cta-content">
-        <h2>Ti piace il nostro lavoro?</h2>
-        <p>Contattaci per un preventivo gratuito e personalizzato</p>
+        <h2>Vuoi Realizzare un Progetto con Noi?</h2>
+        <p>Contattaci per un preventivo gratuito e personalizzato. Il nostro team è pronto ad ascoltare le tue esigenze.
+        </p>
         <a href="contatti.html" class="cta-button">Richiedi un Preventivo</a>
       </div>
     </section>
