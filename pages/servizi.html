@@ -5,9 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Servizi - Ecoprogram</title>
+  <script src="../script/theme-init.js"></script>
+  <script src="../script/font-size-init.js"></script>
   <link rel="icon" type="image/png" href="../img/logo.png">
   <link rel="stylesheet" href="../style/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="../script/translations.js"></script>
+  <script src="../script/language.js"></script>
+  <script src="../script/app.js" defer></script>
 </head>
 
 <body>
@@ -20,112 +25,160 @@
           <h1>Ecoprogram</h1>
         </div>
       </a>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="servizi.html">Servizi</a></li>
-        <li><a href="galleria.html">Galleria</a></li>
-        <li><a href="../index.html#chi-siamo">Chi Siamo</a></li>
-        <li><a href="../index.html#contatti">Contatti</a></li>
-      </ul>
+      <div class="nav-container">
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="servizi.html" class="active" data-i18n="nav_services">Servizi</a></li>
+          <li><a href="galleria.html" data-i18n="nav_gallery">Galleria</a></li>
+          <li><a href="chi-siamo.html" data-i18n="nav_about">Chi Siamo</a></li>
+          <li><a href="contatti.html" data-i18n="nav_contacts">Contatti</a></li>
+        </ul>
+        <div class="settings-menu">
+          <input type="checkbox" id="settingsToggle" class="settings-toggle">
+          <label for="settingsToggle" class="settings-btn">
+            <i class="fas fa-cog"></i>
+            <span data-i18n="nav_settings">Impostazioni</span>
+          </label>
+          <label for="settingsToggle" class="settings-overlay-label"></label>
+          <div class="settings-overlay"></div>
+          <div class="settings-dropdown">
+            <div class="theme-switch">
+              <input type="checkbox" id="themeToggle" class="theme-checkbox">
+              <label for="themeToggle" class="theme-label">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+                <span data-i18n="settings_theme">Tema Chiaro/Scuro</span>
+              </label>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="font-size-setting">
+              <span class="settings-label" data-i18n="settings_font_size">Dimensione Testo</span>
+              <div class="font-size-controls">
+                <button class="font-size-btn" data-size="small">A</button>
+                <button class="font-size-btn" data-size="medium">A</button>
+                <button class="font-size-btn" data-size="large">A</button>
+              </div>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="language-setting">
+              <span class="settings-label" data-i18n="settings_language">Lingua</span>
+              <select class="language-select" id="languageSelect">
+                <option value="it">Italiano</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
   </header>
 
-  <!-- Servizi Dettagliati -->
-  <section class="services-detailed">
-    <h1>I Nostri Servizi</h1>
-
-    <!-- Giardinaggio -->
-    <div class="service-section">
-      <h2><i class="fas fa-leaf"></i> Servizi di Giardinaggio</h2>
-      <div class="service-grid">
-        <div class="service-item">
-          <h3>Manutenzione Giardini</h3>
-          <p>Servizio completo di manutenzione ordinaria e straordinaria del vostro giardino, incluso taglio prato,
-            potatura siepi e cura delle piante.</p>
-          <ul>
-            <li>Taglio prato professionale</li>
-            <li>Potatura siepi e arbusti</li>
-            <li>Concimazione e trattamenti</li>
-            <li>Pulizia e raccolta foglie</li>
-          </ul>
-        </div>
-
-        <div class="service-item">
-          <h3>Progettazione Spazi Verdi</h3>
-          <p>Creiamo il giardino dei vostri sogni con un design personalizzato e sostenibile.</p>
-          <ul>
-            <li>Consulenza professionale</li>
-            <li>Progettazione 3D</li>
-            <li>Selezione piante autoctone</li>
-            <li>Preventivi dettagliati</li>
-          </ul>
-        </div>
-
-        <div class="service-item">
-          <h3>Sistemi di Irrigazione</h3>
-          <p>Installazione e manutenzione di sistemi di irrigazione automatici ed efficienti.</p>
-          <ul>
-            <li>Progettazione sistema</li>
-            <li>Installazione professionale</li>
-            <li>Manutenzione periodica</li>
-            <li>Sistemi di controllo smart</li>
-          </ul>
-        </div>
-      </div>
+  <!-- Services Content -->
+  <main class="services-page">
+    <div class="services-hero">
+      <h1 data-i18n="services_page_title">I Nostri Servizi</h1>
+      <p data-i18n="services_page_subtitle">Soluzioni professionali per ogni esigenza</p>
     </div>
 
-    <!-- Pulizie -->
-    <div class="service-section">
-      <h2><i class="fas fa-broom"></i> Servizi di Pulizia</h2>
-      <div class="service-grid">
-        <div class="service-item">
-          <h3>Pulizie Domestiche</h3>
-          <p>Servizio professionale di pulizia per abitazioni private con personale qualificato.</p>
+    <section id="giardinaggio" class="service-section">
+      <div class="service-content">
+        <div class="service-text">
+          <h2 data-i18n="service_gardening">Giardinaggio</h2>
+          <p data-i18n="service_gardening_desc">Servizi professionali di giardinaggio per privati e aziende:</p>
           <ul>
-            <li>Pulizia generale</li>
-            <li>Sanificazione bagni e cucine</li>
-            <li>Lavaggio vetri e infissi</li>
-            <li>Trattamenti pavimenti</li>
+            <li data-i18n="gardening_service_1">Progettazione e realizzazione giardini</li>
+            <li data-i18n="gardening_service_2">Potatura alberi e siepi</li>
+            <li data-i18n="gardening_service_3">Manutenzione ordinaria e straordinaria</li>
+            <li data-i18n="gardening_service_4">Impianti di irrigazione</li>
+            <li data-i18n="gardening_service_5">Trattamenti fitosanitari</li>
           </ul>
+          <a href="contatti.html" class="cta-button" data-i18n="request_quote">Richiedi Preventivo</a>
         </div>
-
-        <div class="service-item">
-          <h3>Pulizie Uffici</h3>
-          <p>Servizi specializzati per ambienti di lavoro e spazi commerciali.</p>
-          <ul>
-            <li>Pulizia quotidiana</li>
-            <li>Sanificazione postazioni</li>
-            <li>Pulizia aree comuni</li>
-            <li>Gestione rifiuti</li>
-          </ul>
-        </div>
-
-        <div class="service-item">
-          <h3>Sanificazione Ambienti</h3>
-          <p>Trattamenti professionali di sanificazione e disinfezione.</p>
-          <ul>
-            <li>Sanificazione certificata</li>
-            <li>Trattamenti anti-covid</li>
-            <li>Disinfezione spazi</li>
-            <li>Certificazione interventi</li>
-          </ul>
+        <div class="service-image">
+          <img src="../img/services/gardening.jpg" alt="Servizi di Giardinaggio">
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="pulizie" class="service-section">
+      <div class="service-content reverse">
+        <div class="service-text">
+          <h2 data-i18n="service_cleaning">Pulizie</h2>
+          <p data-i18n="service_cleaning_desc">Servizi di pulizia professionale per ogni ambiente:</p>
+          <ul>
+            <li data-i18n="cleaning_service_1">Pulizie civili e industriali</li>
+            <li data-i18n="cleaning_service_2">Sanificazione ambienti</li>
+            <li data-i18n="cleaning_service_3">Pulizia vetrate e facciate</li>
+            <li data-i18n="cleaning_service_4">Trattamento pavimenti</li>
+            <li data-i18n="cleaning_service_5">Pulizie di fine cantiere</li>
+          </ul>
+          <a href="contatti.html" class="cta-button" data-i18n="request_quote">Richiedi Preventivo</a>
+        </div>
+        <div class="service-image">
+          <img src="../img/services/cleaning.jpg" alt="Servizi di Pulizia">
+        </div>
+      </div>
+    </section>
+
+    <section id="manutenzione" class="service-section">
+      <div class="service-content">
+        <div class="service-text">
+          <h2 data-i18n="service_maintenance">Manutenzione Verde</h2>
+          <p data-i18n="service_maintenance_desc">Servizi di manutenzione continuativa:</p>
+          <ul>
+            <li data-i18n="maintenance_service_1">Manutenzione parchi e giardini</li>
+            <li data-i18n="maintenance_service_2">Gestione aree verdi condominiali</li>
+            <li data-i18n="maintenance_service_3">Manutenzione campi sportivi</li>
+            <li data-i18n="maintenance_service_4">Controllo e gestione parassiti</li>
+            <li data-i18n="maintenance_service_5">Consulenza agronomica</li>
+          </ul>
+          <a href="contatti.html" class="cta-button" data-i18n="request_quote">Richiedi Preventivo</a>
+        </div>
+        <div class="service-image">
+          <img src="../img/services/maintenance.jpg" alt="Manutenzione Verde">
+        </div>
+      </div>
+    </section>
+
+    <section id="speciali" class="service-section">
+      <div class="service-content reverse">
+        <div class="service-text">
+          <h2 data-i18n="service_special">Servizi Speciali</h2>
+          <p data-i18n="service_special_desc">Soluzioni personalizzate per esigenze specifiche:</p>
+          <ul>
+            <li data-i18n="special_service_1">Progettazione giardini verticali</li>
+            <li data-i18n="special_service_2">Bonifiche ambientali</li>
+            <li data-i18n="special_service_3">Interventi di emergenza</li>
+            <li data-i18n="special_service_4">Consulenza tecnica</li>
+            <li data-i18n="special_service_5">Formazione personale</li>
+          </ul>
+          <a href="contatti.html" class="cta-button" data-i18n="request_quote">Richiedi Preventivo</a>
+        </div>
+        <div class="service-image">
+          <img src="../img/services/special.jpg" alt="Servizi Speciali">
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-section company-info">
         <h3>Ecoprogram S.r.l.</h3>
-        <p>La tua scelta di fiducia per servizi di giardinaggio e pulizie professionali dal 2010.</p>
+        <p data-i18n="footer_company_description">La tua scelta di fiducia per servizi di giardinaggio e pulizie
+          professionali dal 2010.</p>
         <div class="contact-info">
-          <p><i class="fas fa-map-marker-alt"></i> Via Example, 123 - Milano</p>
-          <p><i class="fas fa-phone"></i> +39 02 1234567</p>
-          <p><i class="fas fa-envelope"></i> info@ecoprogram.it</p>
-          <p><i class="fas fa-clock"></i> Lun - Ven: 8:00 - 18:00</p>
-          <p class="indent">Sab: 8:00 - 12:00</p>
+          <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">Via Example, 123 - Milano</span></p>
+          <p><i class="fas fa-phone"></i> <span data-i18n="footer_phone">+39 02 1234567</span></p>
+          <p><i class="fas fa-envelope"></i> <span data-i18n="footer_email">info@ecoprogram.it</span></p>
+          <p><i class="fas fa-clock"></i> <span data-i18n="footer_hours_weekdays">Lun - Ven: 8:00 - 18:00</span></p>
+          <p class="indent" data-i18n="footer_hours_saturday">Sab: 8:00 - 12:00</p>
         </div>
       </div>
 
@@ -171,6 +224,16 @@
       </div>
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="../script/app.js"></script>
+  <script>
+    // Initialize language manager
+    document.addEventListener('DOMContentLoaded', () => {
+      const languageManager = new LanguageManager();
+      languageManager.init();
+    });
+  </script>
 </body>
 
 </html>

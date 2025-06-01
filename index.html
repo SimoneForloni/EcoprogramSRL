@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="it" data-theme="light">
+<html lang="it">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ecoprogram - Servizi di Giardinaggio e Pulizie</title>
+  <script src="script/theme-init.js"></script>
+  <script src="script/font-size-init.js"></script>
   <link rel="icon" type="image/png" href="img/logo.png">
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="script/translations.js"></script>
   <script src="script/language.js"></script>
-  <script src="script/theme.js" defer></script>
+  <script src="script/app.js" defer></script>
 </head>
 
 <body>
@@ -28,21 +30,28 @@
           <i class="fas fa-bars"></i>
         </button>
         <ul class="nav-links">
-          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="index.html" class="active" data-i18n="nav_home">Home</a></li>
           <li><a href="pages/servizi.html" data-i18n="nav_services">Servizi</a></li>
           <li><a href="pages/galleria.html" data-i18n="nav_gallery">Galleria</a></li>
           <li><a href="pages/chi-siamo.html" data-i18n="nav_about">Chi Siamo</a></li>
           <li><a href="pages/contatti.html" data-i18n="nav_contacts">Contatti</a></li>
         </ul>
         <div class="settings-menu">
-          <button class="settings-btn">
+          <input type="checkbox" id="settingsToggle" class="settings-toggle">
+          <label for="settingsToggle" class="settings-btn">
             <i class="fas fa-cog"></i>
             <span data-i18n="nav_settings">Impostazioni</span>
-          </button>
+          </label>
+          <div class="settings-overlay"></div>
+          <label for="settingsToggle" class="settings-overlay-label"></label>
           <div class="settings-dropdown">
-            <div class="theme-switch" id="themeSwitch">
-              <i class="fas fa-sun"></i>
-              <span data-i18n="settings_theme">Tema Chiaro/Scuro</span>
+            <div class="theme-switch">
+              <input type="checkbox" id="themeToggle" class="theme-checkbox">
+              <label for="themeToggle" class="theme-label">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+                <span data-i18n="settings_theme">Tema Chiaro/Scuro</span>
+              </label>
             </div>
             <div class="settings-divider"></div>
             <div class="font-size-setting">
