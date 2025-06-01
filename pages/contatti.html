@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti - Ecoprogram</title>
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar">
+      <a href="../index.html" class="logo-link">
+        <div class="logo">
+          <img src="../img/logo.png" alt="Ecoprogram Logo" class="logo-img">
+          <h1>Ecoprogram</h1>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="servizi.html">Servizi</a></li>
+        <li><a href="galleria.html">Galleria</a></li>
+        <li><a href="chi-siamo.html">Chi Siamo</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contatti Content -->
+  <section class="contact-page">
+    <div class="contact-hero">
+      <h1>Contattaci</h1>
+      <p class="subtitle">Siamo qui per aiutarti</p>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-info-section">
+        <h2>Informazioni di Contatto</h2>
+        <div class="contact-info-grid">
+          <div class="contact-info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Indirizzo</h3>
+            <p>Via Example, 123</p>
+            <p>12345 Città (PR)</p>
+          </div>
+          <div class="contact-info-item">
+            <i class="fas fa-phone"></i>
+            <h3>Telefono</h3>
+            <p>Tel: +39 XXX XXX XXXX</p>
+            <p>Cell: +39 XXX XXX XXXX</p>
+          </div>
+          <div class="contact-info-item">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>info@ecoprogram.it</p>
+            <p>preventivi@ecoprogram.it</p>
+          </div>
+          <div class="contact-info-item">
+            <i class="fas fa-clock"></i>
+            <h3>Orari</h3>
+            <p>Lun - Ven: 8:00 - 18:00</p>
+            <p>Sab: 8:00 - 12:00</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-section">
+        <h2>Inviaci un Messaggio</h2>
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <label for="name">Nome e Cognome *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefono</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="service">Servizio di Interesse *</label>
+            <select id="service" name="service" required>
+              <option value="">Seleziona un servizio</option>
+              <option value="giardinaggio">Giardinaggio</option>
+              <option value="pulizie">Pulizie</option>
+              <option value="entrambi">Entrambi i Servizi</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Messaggio *</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <div class="form-group privacy-check">
+            <input type="checkbox" id="privacy" name="privacy" required>
+            <label for="privacy">Acconsento al trattamento dei dati personali *</label>
+          </div>
+          <button type="submit" class="submit-button">Invia Messaggio</button>
+        </form>
+      </div>
+
+      <div class="map-section">
+        <h2>Dove Siamo</h2>
+        <div class="map-container">
+          <!-- Placeholder per la mappa di Google -->
+          <div class="map-placeholder">
+            <i class="fas fa-map"></i>
+            <p>Mappa in arrivo...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section company-info">
+        <h3>Ecoprogram S.r.l.</h3>
+        <p>La tua scelta di fiducia per servizi di giardinaggio e pulizie professionali dal 2010.</p>
+        <div class="contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> Via Example, 123 - Milano</p>
+          <p><i class="fas fa-phone"></i> +39 02 1234567</p>
+          <p><i class="fas fa-envelope"></i> info@ecoprogram.it</p>
+          <p><i class="fas fa-clock"></i> Lun - Ven: 8:00 - 18:00</p>
+          <p class="indent">Sab: 8:00 - 12:00</p>
+        </div>
+      </div>
+
+      <div class="footer-section quick-links">
+        <h3>Link Rapidi</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="servizi.html">Servizi</a></li>
+          <li><a href="galleria.html">Galleria</a></li>
+          <li><a href="chi-siamo.html">Chi Siamo</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section services-links">
+        <h3>I Nostri Servizi</h3>
+        <ul>
+          <li><a href="servizi.html#giardinaggio">Giardinaggio</a></li>
+          <li><a href="servizi.html#pulizie">Pulizie</a></li>
+          <li><a href="servizi.html#manutenzione">Manutenzione Verde</a></li>
+          <li><a href="servizi.html#speciali">Servizi Speciali</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section social">
+        <h3>Seguici</h3>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p>&copy; 2024 Ecoprogram S.r.l. - P.IVA 12345678901 - Tutti i diritti riservati</p>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="termini-condizioni.html">Termini e Condizioni</a>
+          <a href="cookie-policy.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script/app.js"></script>
+</body>
+
+</html>

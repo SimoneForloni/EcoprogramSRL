@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galleria - Ecoprogram</title>
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar">
+      <a href="../index.html" class="logo-link">
+        <div class="logo">
+          <img src="../img/logo.png" alt="Ecoprogram Logo" class="logo-img">
+          <h1>Ecoprogram</h1>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="servizi.html">Servizi</a></li>
+        <li><a href="galleria.html">Galleria</a></li>
+        <li><a href="../index.html#chi-siamo">Chi Siamo</a></li>
+        <li><a href="../index.html#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Galleria -->
+  <section class="gallery">
+    <h1>La Nostra Galleria</h1>
+
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all">Tutti</button>
+      <button class="filter-btn" data-filter="giardinaggio">Giardinaggio</button>
+      <button class="filter-btn" data-filter="pulizie">Pulizie</button>
+    </div>
+
+    <div class="gallery-grid">
+      <!-- Giardinaggio Images -->
+      <div class="gallery-item" data-category="giardinaggio">
+        <img
+          src="https://images.unsplash.com/photo-1557429287-b2e26467fc2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+          alt="Giardino curato">
+        <div class="gallery-caption">
+          <h3>Manutenzione Giardini</h3>
+          <p>Servizio completo di cura del verde</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="giardinaggio">
+        <img
+          src="https://images.unsplash.com/photo-1558904541-efa843a96f01?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+          alt="Progettazione giardino">
+        <div class="gallery-caption">
+          <h3>Progettazione Verde</h3>
+          <p>Design personalizzato</p>
+        </div>
+      </div>
+
+      <!-- Pulizie Images -->
+      <div class="gallery-item" data-category="pulizie">
+        <img
+          src="https://images.unsplash.com/photo-1527515545081-5db817172677?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+          alt="Pulizia uffici">
+        <div class="gallery-caption">
+          <h3>Pulizia Uffici</h3>
+          <p>Ambienti di lavoro impeccabili</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="pulizie">
+        <img
+          src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+          alt="Sanificazione">
+        <div class="gallery-caption">
+          <h3>Sanificazione</h3>
+          <p>Trattamenti professionali</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section company-info">
+        <h3>Ecoprogram S.r.l.</h3>
+        <p>La tua scelta di fiducia per servizi di giardinaggio e pulizie professionali dal 2010.</p>
+        <div class="contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> Via Example, 123 - Milano</p>
+          <p><i class="fas fa-phone"></i> +39 02 1234567</p>
+          <p><i class="fas fa-envelope"></i> info@ecoprogram.it</p>
+          <p><i class="fas fa-clock"></i> Lun - Ven: 8:00 - 18:00</p>
+          <p class="indent">Sab: 8:00 - 12:00</p>
+        </div>
+      </div>
+
+      <div class="footer-section quick-links">
+        <h3>Link Rapidi</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="servizi.html">Servizi</a></li>
+          <li><a href="galleria.html">Galleria</a></li>
+          <li><a href="chi-siamo.html">Chi Siamo</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section services-links">
+        <h3>I Nostri Servizi</h3>
+        <ul>
+          <li><a href="servizi.html#giardinaggio">Giardinaggio</a></li>
+          <li><a href="servizi.html#pulizie">Pulizie</a></li>
+          <li><a href="servizi.html#manutenzione">Manutenzione Verde</a></li>
+          <li><a href="servizi.html#speciali">Servizi Speciali</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section social">
+        <h3>Seguici</h3>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p>&copy; 2024 Ecoprogram S.r.l. - P.IVA 12345678901 - Tutti i diritti riservati</p>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="termini-condizioni.html">Termini e Condizioni</a>
+          <a href="cookie-policy.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
