@@ -5,14 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contatti - Ecoprogram</title>
-  <script src="../script/theme-init.js"></script>
-  <script src="../script/font-size-init.js"></script>
   <link rel="icon" type="image/png" href="../img/logo.png">
   <link rel="stylesheet" href="../style/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <script src="../script/translations.js"></script>
-  <script src="../script/language.js"></script>
-  <script src="../script/app.js" defer></script>
+  <script src="../script/main.js"></script>
 </head>
 
 <body>
@@ -42,8 +38,7 @@
             <i class="fas fa-cog"></i>
             <span data-i18n="nav_settings">Impostazioni</span>
           </label>
-          <div class="settings-overlay"></div>
-          <label for="settingsToggle" class="settings-overlay-label"></label>
+          <label for="settingsToggle" class="settings-overlay"></label>
           <div class="settings-dropdown">
             <div class="theme-switch">
               <input type="checkbox" id="themeToggle" class="theme-checkbox">
@@ -64,12 +59,9 @@
             </div>
             <div class="settings-divider"></div>
             <div class="language-setting">
-              <span class="settings-label" data-i18n="settings_language">Lingua</span>
-              <select class="language-select" id="languageSelect">
+              <span class="settings-label">Lingua</span>
+              <select class="language-select" id="languageSelect" disabled>
                 <option value="it">Italiano</option>
-                <option value="en">English</option>
-                <option value="es">Español</option>
-                <option value="fr">Français</option>
               </select>
             </div>
           </div>
@@ -78,156 +70,169 @@
     </nav>
   </header>
 
-  <!-- Contact Content -->
+  <!-- Contact Page Content -->
   <main class="contact-page">
     <div class="contact-hero">
-      <h1 data-i18n="contact_title">Contatti</h1>
-      <p data-i18n="contact_subtitle">Siamo qui per aiutarti</p>
+      <h1>Contattaci</h1>
+      <p class="subtitle">Siamo qui per aiutarti. Contattaci per qualsiasi informazione o preventivo.</p>
     </div>
 
     <div class="contact-container">
-      <div class="contact-info-section">
-        <h2 data-i18n="contact_info_title">Informazioni di Contatto</h2>
+      <!-- Contact Information -->
+      <section class="contact-info-section">
+        <h2><i class="fas fa-info-circle"></i> Informazioni di Contatto</h2>
         <div class="contact-details">
           <div class="contact-item">
             <i class="fas fa-map-marker-alt"></i>
             <div>
-              <h3 data-i18n="contact_address">Indirizzo</h3>
-              <p data-i18n="contact_address_street">Via Example, 123</p>
-              <p data-i18n="contact_address_city">20100 Milano (MI)</p>
+              <h3>Indirizzo</h3>
+              <p>Via Catalafimi, 12</p>
+              <p>20090 Buccinasco (MI)</p>
+              <p>Italia</p>
             </div>
           </div>
           <div class="contact-item">
             <i class="fas fa-phone"></i>
             <div>
-              <h3 data-i18n="contact_phone">Telefono</h3>
-              <p data-i18n="contact_phone_office">+39 02 1234567</p>
-              <p data-i18n="contact_phone_mobile">+39 333 1234567</p>
+              <h3>Telefono</h3>
+              <p>+39 02 1234567</p>
+              <p>+39 333 1234567 (Mobile)</p>
             </div>
           </div>
           <div class="contact-item">
             <i class="fas fa-envelope"></i>
             <div>
-              <h3 data-i18n="contact_email">Email</h3>
-              <p data-i18n="contact_email_info">info@ecoprogram.it</p>
-              <p data-i18n="contact_email_quotes">preventivi@ecoprogram.it</p>
+              <h3>Email</h3>
+              <p>info@ecoprogram.it</p>
+              <p>preventivi@ecoprogram.it</p>
             </div>
           </div>
           <div class="contact-item">
             <i class="fas fa-clock"></i>
             <div>
-              <h3 data-i18n="contact_hours">Orari</h3>
-              <p data-i18n="contact_hours_weekdays">Lun - Ven: 8:00 - 18:00</p>
-              <p data-i18n="contact_hours_saturday">Sab: 8:00 - 12:00</p>
+              <h3>Orari</h3>
+              <p>Lunedì - Venerdì: 8:00 - 18:00</p>
+              <p>Sabato: 8:00 - 12:00</p>
+              <p>Domenica: Chiuso</p>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="social-contact">
-          <h3 data-i18n="contact_social">Seguici sui Social</h3>
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact-form-section">
-        <h2 data-i18n="contact_form_title">Richiedi un Preventivo</h2>
-        <form id="contact-form" class="contact-form">
+      <!-- Contact Form -->
+      <section class="contact-form-section">
+        <h2><i class="fas fa-envelope"></i> Inviaci un Messaggio</h2>
+        <form id="contactForm" class="contact-form">
           <div class="form-group">
-            <label for="name" data-i18n="contact_form_name">Nome e Cognome *</label>
+            <label for="name">Nome e Cognome *</label>
             <input type="text" id="name" name="name" required>
           </div>
-
           <div class="form-group">
-            <label for="email" data-i18n="contact_form_email">Email *</label>
+            <label for="email">Email *</label>
             <input type="email" id="email" name="email" required>
           </div>
-
           <div class="form-group">
-            <label for="phone" data-i18n="contact_form_phone">Telefono</label>
+            <label for="phone">Telefono</label>
             <input type="tel" id="phone" name="phone">
           </div>
-
           <div class="form-group">
-            <label for="service" data-i18n="contact_form_service">Servizio di Interesse *</label>
-            <select id="service" name="service" required>
-              <option value="" data-i18n="contact_form_service_select">Seleziona un servizio</option>
-              <option value="giardinaggio" data-i18n="service_gardening">Giardinaggio</option>
-              <option value="pulizie" data-i18n="service_cleaning">Pulizie</option>
-              <option value="manutenzione" data-i18n="service_maintenance">Manutenzione Verde</option>
-              <option value="speciali" data-i18n="service_special">Servizi Speciali</option>
+            <label for="subject">Oggetto *</label>
+            <select id="subject" name="subject" required>
+              <option value="">Seleziona un oggetto</option>
+              <option value="preventivo">Richiesta Preventivo</option>
+              <option value="informazioni">Richiesta Informazioni</option>
+              <option value="assistenza">Assistenza</option>
+              <option value="altro">Altro</option>
             </select>
           </div>
-
           <div class="form-group">
-            <label for="message" data-i18n="contact_form_message">Messaggio *</label>
+            <label for="message">Messaggio *</label>
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
-
-          <div class="form-group privacy-check">
+          <div class="form-group checkbox-group">
             <input type="checkbox" id="privacy" name="privacy" required>
-            <label for="privacy" data-i18n="contact_form_privacy">Ho letto e accetto la <a
-                href="privacy-policy.html">Privacy Policy</a> *</label>
+            <label for="privacy">Ho letto e accetto la <a href="privacy-policy.html">Privacy Policy</a> *</label>
           </div>
-
-          <button type="submit" class="submit-btn" data-i18n="contact_form_submit">Invia Richiesta</button>
+          <div class="form-group">
+            <button type="submit" class="submit-button">
+              <i class="fas fa-paper-plane"></i> Invia Messaggio
+            </button>
+          </div>
         </form>
-      </div>
+      </section>
     </div>
 
-    <div class="map-section">
-      <h2 data-i18n="contact_map_title">Dove Siamo</h2>
+    <!-- Map Section -->
+    <section class="map-section">
+      <h2><i class="fas fa-map-marked-alt"></i> Dove Siamo</h2>
       <div class="map-container">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5600.484515610745!2d9.110786076628235!3d45.4246176360783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c2f824f2184b%3A0x341f60fa582940b4!2sVia%20Calatafimi%2C%2012%2C%2020090%20Buccinasco%20MI!5e0!3m2!1sit!2sit!4v1748782016886!5m2!1sit!2sit"
-          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.854087832606!2d9.1859243!3d45.4641111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDI3JzUwLjgiTiA5wrAxMScwOS4zIkU!5e0!3m2!1sit!2sit!4v1635789456789!5m2!1sit!2sit"
+          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
       </div>
-    </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-section">
+      <h2><i class="fas fa-share-alt"></i> Seguici sui Social</h2>
+      <div class="social-links">
+        <a href="#" class="social-link facebook">
+          <i class="fab fa-facebook"></i>
+          <span>Facebook</span>
+        </a>
+        <a href="#" class="social-link instagram">
+          <i class="fab fa-instagram"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="#" class="social-link linkedin">
+          <i class="fab fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-section company-info">
-        <h3>Ecoprogram S.r.l.</h3>
-        <p data-i18n="footer_company_description">La tua scelta di fiducia per servizi di giardinaggio e pulizie
-          professionali dal 2010.</p>
+        <h3 data-i18n="footer_company">Ecoprogram S.r.l.</h3>
+        <p data-i18n="footer_desc">La tua scelta di fiducia per servizi di giardinaggio e pulizie professionali dal
+          1993.</p>
         <div class="contact-info">
-          <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">Via Example, 123 - Milano</span></p>
+          <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">Via Catalafimi, 12 - Buccinasco
+              (MI)</span></p>
           <p><i class="fas fa-phone"></i> <span data-i18n="footer_phone">+39 02 1234567</span></p>
           <p><i class="fas fa-envelope"></i> <span data-i18n="footer_email">info@ecoprogram.it</span></p>
-          <p><i class="fas fa-clock"></i> <span data-i18n="footer_hours_weekdays">Lun - Ven: 8:00 - 18:00</span></p>
-          <p class="indent" data-i18n="footer_hours_saturday">Sab: 8:00 - 12:00</p>
+          <p><i class="fas fa-clock"></i> <span data-i18n="footer_hours">Lun - Ven: 8:00 - 18:00</span></p>
+          <p class="indent" data-i18n="footer_hours_sat">Sab: 8:00 - 12:00</p>
         </div>
       </div>
 
       <div class="footer-section quick-links">
-        <h3>Link Rapidi</h3>
+        <h3 data-i18n="footer_quick_links">Link Rapidi</h3>
         <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="servizi.html">Servizi</a></li>
-          <li><a href="galleria.html">Galleria</a></li>
-          <li><a href="chi-siamo.html">Chi Siamo</a></li>
-          <li><a href="contatti.html">Contatti</a></li>
+          <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="servizi.html" data-i18n="nav_services">Servizi</a></li>
+          <li><a href="galleria.html" data-i18n="nav_gallery">Galleria</a></li>
+          <li><a href="chi-siamo.html" data-i18n="nav_about">Chi Siamo</a></li>
+          <li><a href="contatti.html" data-i18n="nav_contacts">Contatti</a></li>
         </ul>
       </div>
 
       <div class="footer-section services-links">
-        <h3>I Nostri Servizi</h3>
+        <h3 data-i18n="footer_our_services">I Nostri Servizi</h3>
         <ul>
-          <li><a href="servizi.html#giardinaggio">Giardinaggio</a></li>
-          <li><a href="servizi.html#pulizie">Pulizie</a></li>
-          <li><a href="servizi.html#manutenzione">Manutenzione Verde</a></li>
-          <li><a href="servizi.html#speciali">Servizi Speciali</a></li>
+          <li><a href="servizi.html#giardinaggio" data-i18n="service_gardening">Giardinaggio</a></li>
+          <li><a href="servizi.html#pulizie" data-i18n="service_cleaning">Pulizie</a></li>
+          <li><a href="servizi.html#manutenzione" data-i18n="service_maintenance">Manutenzione Verde</a></li>
+          <li><a href="servizi.html#speciali" data-i18n="service_special">Servizi Speciali</a></li>
         </ul>
       </div>
 
       <div class="footer-section social">
-        <h3>Seguici</h3>
+        <h3 data-i18n="footer_follow_us">Seguici</h3>
         <div class="social-links">
           <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
           <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -238,25 +243,16 @@
 
     <div class="footer-bottom">
       <div class="footer-bottom-content">
-        <p>&copy; 2024 Ecoprogram S.r.l. - P.IVA 12345678901 - Tutti i diritti riservati</p>
+        <p data-i18n="footer_copyright">&copy; 2024 Ecoprogram S.r.l. - P.IVA 12345678901 - Tutti i diritti riservati
+        </p>
         <div class="footer-bottom-links">
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="termini-condizioni.html">Termini e Condizioni</a>
-          <a href="cookie-policy.html">Cookie Policy</a>
+          <a href="privacy-policy.html" data-i18n="footer_privacy">Privacy Policy</a>
+          <a href="termini-condizioni.html" data-i18n="footer_terms">Termini e Condizioni</a>
+          <a href="cookie-policy.html" data-i18n="footer_cookies">Cookie Policy</a>
         </div>
       </div>
     </div>
   </footer>
-
-  <!-- Scripts -->
-  <script src="../script/contact.js"></script>
-  <script>
-    // Initialize language manager
-    document.addEventListener('DOMContentLoaded', () => {
-      const languageManager = new LanguageManager();
-      languageManager.init();
-    });
-  </script>
 </body>
 
 </html>

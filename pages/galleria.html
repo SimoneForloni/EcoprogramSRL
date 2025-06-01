@@ -5,14 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galleria - Ecoprogram</title>
-  <script src="../script/theme-init.js"></script>
-  <script src="../script/font-size-init.js"></script>
   <link rel="icon" type="image/png" href="../img/logo.png">
   <link rel="stylesheet" href="../style/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <script src="../script/translations.js"></script>
-  <script src="../script/language.js"></script>
-  <script src="../script/app.js" defer></script>
+  <script src="../script/main.js"></script>
 </head>
 
 <body>
@@ -42,8 +38,7 @@
             <i class="fas fa-cog"></i>
             <span data-i18n="nav_settings">Impostazioni</span>
           </label>
-          <div class="settings-overlay"></div>
-          <label for="settingsToggle" class="settings-overlay-label"></label>
+          <label for="settingsToggle" class="settings-overlay"></label>
           <div class="settings-dropdown">
             <div class="theme-switch">
               <input type="checkbox" id="themeToggle" class="theme-checkbox">
@@ -64,12 +59,9 @@
             </div>
             <div class="settings-divider"></div>
             <div class="language-setting">
-              <span class="settings-label" data-i18n="settings_language">Lingua</span>
-              <select class="language-select" id="languageSelect">
+              <span class="settings-label">Lingua</span>
+              <select class="language-select" id="languageSelect" disabled>
                 <option value="it">Italiano</option>
-                <option value="en">English</option>
-                <option value="es">Español</option>
-                <option value="fr">Français</option>
               </select>
             </div>
           </div>
@@ -78,166 +70,183 @@
     </nav>
   </header>
 
-  <!-- Gallery Content -->
+  <!-- Gallery Page Content -->
   <main class="gallery-page">
     <div class="gallery-hero">
-      <h1 data-i18n="gallery_title">Galleria</h1>
-      <p data-i18n="gallery_subtitle">I nostri lavori più significativi</p>
+      <h1>Galleria</h1>
+      <p class="subtitle">Scopri i nostri lavori attraverso le immagini dei progetti realizzati</p>
     </div>
 
-    <div class="gallery-filters">
-      <button class="filter-btn active" data-filter="all" data-i18n="gallery_filter_all">Tutti</button>
-      <button class="filter-btn" data-filter="giardinaggio" data-i18n="gallery_filter_gardening">Giardinaggio</button>
-      <button class="filter-btn" data-filter="pulizie" data-i18n="gallery_filter_cleaning">Pulizie</button>
-      <button class="filter-btn" data-filter="manutenzione" data-i18n="gallery_filter_maintenance">Manutenzione</button>
-      <button class="filter-btn" data-filter="speciali" data-i18n="gallery_filter_special">Progetti Speciali</button>
-    </div>
+    <!-- Gallery Filters -->
+    <section class="gallery-filters">
+      <h2>Filtra per Categoria</h2>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fas fa-th"></i> Tutti
+        </button>
+        <button class="filter-btn" data-filter="giardinaggio">
+          <i class="fas fa-leaf"></i> Giardinaggio
+        </button>
+        <button class="filter-btn" data-filter="pulizie">
+          <i class="fas fa-broom"></i> Pulizie
+        </button>
+        <button class="filter-btn" data-filter="speciali">
+          <i class="fas fa-star"></i> Servizi Speciali
+        </button>
+      </div>
+    </section>
 
-    <div class="gallery-grid">
+    <!-- Gallery Grid -->
+    <section class="gallery-grid">
       <!-- Giardinaggio -->
       <div class="gallery-item" data-category="giardinaggio">
-        <img src="../img/gallery/gardening1.jpg" alt="Progettazione Giardino">
-        <div class="gallery-item-info">
-          <h3 data-i18n="gallery_gardening_1_title">Progettazione Giardino</h3>
-          <p data-i18n="gallery_gardening_1_desc">Villa privata - Milano</p>
+        <img src="../img/gallery/giardino-1.jpg" alt="Manutenzione giardino residenziale">
+        <div class="gallery-item-overlay">
+          <h3>Manutenzione Giardino</h3>
+          <p>Progetto residenziale a Milano</p>
+          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
         </div>
       </div>
+
       <div class="gallery-item" data-category="giardinaggio">
-        <img src="../img/gallery/gardening2.jpg" alt="Manutenzione Parco">
-        <div class="gallery-item-info">
-          <h3 data-i18n="gallery_gardening_2_title">Manutenzione Parco</h3>
-          <p data-i18n="gallery_gardening_2_desc">Parco pubblico - Monza</p>
+        <img src="../img/gallery/giardino-2.jpg" alt="Progettazione spazio verde aziendale">
+        <div class="gallery-item-overlay">
+          <h3>Progettazione Verde</h3>
+          <p>Spazio aziendale moderno</p>
+          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
         </div>
       </div>
+
       <div class="gallery-item" data-category="giardinaggio">
-        <img src="../img/gallery/gardening3.jpg" alt="Potatura Alberi">
-        <div class="gallery-item-info">
-          <h3 data-i18n="gallery_gardening_3_title">Potatura Alberi</h3>
-          <p data-i18n="gallery_gardening_3_desc">Viale alberato - Como</p>
+        <img src="../img/gallery/giardino-3.jpg" alt="Sistema di irrigazione automatico">
+        <div class="gallery-item-overlay">
+          <h3>Sistema Irrigazione</h3>
+          <p>Impianto automatizzato</p>
+          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
         </div>
       </div>
 
       <!-- Pulizie -->
       <div class="gallery-item" data-category="pulizie">
-        <img src="../img/gallery/cleaning1.jpg" alt="Pulizia Uffici">
-        <div class="gallery-item-info">
-          <h3 data-i18n="gallery_cleaning_1_title">Pulizia Uffici</h3>
-          <p data-i18n="gallery_cleaning_1_desc">Centro direzionale - Milano</p>
-        </div>
-      </div>
-      <div class="gallery-item" data-category="pulizie">
-        <img src="../img/gallery/cleaning2.jpg" alt="Sanificazione Ambienti">
-        <div class="gallery-item-info">
-          <h3 data-i18n="gallery_cleaning_2_title">Sanificazione Ambienti</h3>
-          <p data-i18n="gallery_cleaning_2_desc">Centro commerciale - Bergamo</p>
-        </div>
-      </div>
-      <div class="gallery-item" data-category="pulizie">
-        <img src="../img/gallery/cleaning3.jpg" alt="Pulizia Vetrate">
-        <div class="gallery-item-info">
-          <h3 data-i18n="gallery_cleaning_3_title">Pulizia Vetrate</h3>
-          <p data-i18n="gallery_cleaning_3_desc">Grattacielo - Milano</p>
+        <img src="../img/gallery/pulizie-1.jpg" alt="Pulizia uffici">
+        <div class="gallery-item-overlay">
+          <h3>Pulizia Uffici</h3>
+          <p>Servizio continuativo</p>
+          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
         </div>
       </div>
 
-      <!-- Manutenzione -->
-      <div class="gallery-item" data-category="manutenzione">
-        <img src="../img/gallery/maintenance1.jpg" alt="Manutenzione Verde">
-        <div class="gallery-item-info">
-          <h3 data-i18n="gallery_maintenance_1_title">Manutenzione Verde</h3>
-          <p data-i18n="gallery_maintenance_1_desc">Complesso residenziale - Varese</p>
-        </div>
-      </div>
-      <div class="gallery-item" data-category="manutenzione">
-        <img src="../img/gallery/maintenance2.jpg" alt="Gestione Aree Verdi">
-        <div class="gallery-item-info">
-          <h3 data-i18n="gallery_maintenance_2_title">Gestione Aree Verdi</h3>
-          <p data-i18n="gallery_maintenance_2_desc">Campus universitario - Milano</p>
-        </div>
-      </div>
-      <div class="gallery-item" data-category="manutenzione">
-        <img src="../img/gallery/maintenance3.jpg" alt="Campo Sportivo">
-        <div class="gallery-item-info">
-          <h3 data-i18n="gallery_maintenance_3_title">Campo Sportivo</h3>
-          <p data-i18n="gallery_maintenance_3_desc">Centro sportivo - Lecco</p>
+      <div class="gallery-item" data-category="pulizie">
+        <img src="../img/gallery/pulizie-2.jpg" alt="Sanificazione ambienti">
+        <div class="gallery-item-overlay">
+          <h3>Sanificazione</h3>
+          <p>Trattamento professionale</p>
+          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
         </div>
       </div>
 
-      <!-- Progetti Speciali -->
-      <div class="gallery-item" data-category="speciali">
-        <img src="../img/gallery/special1.jpg" alt="Giardino Verticale">
-        <div class="gallery-item-info">
-          <h3 data-i18n="gallery_special_1_title">Giardino Verticale</h3>
-          <p data-i18n="gallery_special_1_desc">Hotel di lusso - Milano</p>
+      <div class="gallery-item" data-category="pulizie">
+        <img src="../img/gallery/pulizie-3.jpg" alt="Pulizia vetrate">
+        <div class="gallery-item-overlay">
+          <h3>Pulizia Vetrate</h3>
+          <p>Edificio commerciale</p>
+          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
         </div>
       </div>
+
+      <!-- Servizi Speciali -->
       <div class="gallery-item" data-category="speciali">
-        <img src="../img/gallery/special2.jpg" alt="Bonifica Ambientale">
-        <div class="gallery-item-info">
-          <h3 data-i18n="gallery_special_2_title">Bonifica Ambientale</h3>
-          <p data-i18n="gallery_special_2_desc">Area industriale - Brescia</p>
+        <img src="../img/gallery/speciali-1.jpg" alt="Disinfestazione">
+        <div class="gallery-item-overlay">
+          <h3>Disinfestazione</h3>
+          <p>Intervento mirato</p>
+          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
         </div>
       </div>
+
       <div class="gallery-item" data-category="speciali">
-        <img src="../img/gallery/special3.jpg" alt="Progetto Innovativo">
-        <div class="gallery-item-info">
-          <h3 data-i18n="gallery_special_3_title">Progetto Innovativo</h3>
-          <p data-i18n="gallery_special_3_desc">Smart building - Milano</p>
+        <img src="../img/gallery/speciali-2.jpg" alt="Trattamento superfici">
+        <div class="gallery-item-overlay">
+          <h3>Trattamento Superfici</h3>
+          <p>Protezione speciale</p>
+          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="speciali">
+        <img src="../img/gallery/speciali-3.jpg" alt="Pulizia industriale">
+        <div class="gallery-item-overlay">
+          <h3>Pulizia Industriale</h3>
+          <p>Stabilimento produttivo</p>
+          <button class="view-btn"><i class="fas fa-search-plus"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close"><i class="fas fa-times"></i></button>
+      <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+      <div class="lightbox-content">
+        <img src="" alt="">
+        <div class="lightbox-caption">
+          <h3></h3>
+          <p></p>
         </div>
       </div>
     </div>
 
-    <div class="gallery-modal">
-      <span class="modal-close" data-i18n="gallery_modal_close">&times;</span>
-      <img class="modal-content" id="modal-img">
-      <div class="modal-caption">
-        <h3 id="modal-title"></h3>
-        <p id="modal-description"></p>
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>Ti piace il nostro lavoro?</h2>
+        <p>Contattaci per un preventivo gratuito e personalizzato</p>
+        <a href="contatti.html" class="cta-button">Richiedi un Preventivo</a>
       </div>
-      <button class="modal-prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
-      <button class="modal-next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
-    </div>
+    </section>
   </main>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-section company-info">
-        <h3>Ecoprogram S.r.l.</h3>
-        <p data-i18n="footer_company_description">La tua scelta di fiducia per servizi di giardinaggio e pulizie
-          professionali dal 2010.</p>
+        <h3 data-i18n="footer_company">Ecoprogram S.r.l.</h3>
+        <p data-i18n="footer_desc">La tua scelta di fiducia per servizi di giardinaggio e pulizie professionali dal
+          1993.</p>
         <div class="contact-info">
-          <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">Via Example, 123 - Milano</span></p>
+          <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">Via Catalafimi, 12 - Buccinasco
+              (MI)</span></p>
           <p><i class="fas fa-phone"></i> <span data-i18n="footer_phone">+39 02 1234567</span></p>
           <p><i class="fas fa-envelope"></i> <span data-i18n="footer_email">info@ecoprogram.it</span></p>
-          <p><i class="fas fa-clock"></i> <span data-i18n="footer_hours_weekdays">Lun - Ven: 8:00 - 18:00</span></p>
-          <p class="indent" data-i18n="footer_hours_saturday">Sab: 8:00 - 12:00</p>
+          <p><i class="fas fa-clock"></i> <span data-i18n="footer_hours">Lun - Ven: 8:00 - 18:00</span></p>
+          <p class="indent" data-i18n="footer_hours_sat">Sab: 8:00 - 12:00</p>
         </div>
       </div>
 
       <div class="footer-section quick-links">
-        <h3>Link Rapidi</h3>
+        <h3 data-i18n="footer_quick_links">Link Rapidi</h3>
         <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="servizi.html">Servizi</a></li>
-          <li><a href="galleria.html">Galleria</a></li>
-          <li><a href="chi-siamo.html">Chi Siamo</a></li>
-          <li><a href="contatti.html">Contatti</a></li>
+          <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="servizi.html" data-i18n="nav_services">Servizi</a></li>
+          <li><a href="galleria.html" data-i18n="nav_gallery">Galleria</a></li>
+          <li><a href="chi-siamo.html" data-i18n="nav_about">Chi Siamo</a></li>
+          <li><a href="contatti.html" data-i18n="nav_contacts">Contatti</a></li>
         </ul>
       </div>
 
       <div class="footer-section services-links">
-        <h3>I Nostri Servizi</h3>
+        <h3 data-i18n="footer_our_services">I Nostri Servizi</h3>
         <ul>
-          <li><a href="servizi.html#giardinaggio">Giardinaggio</a></li>
-          <li><a href="servizi.html#pulizie">Pulizie</a></li>
-          <li><a href="servizi.html#manutenzione">Manutenzione Verde</a></li>
-          <li><a href="servizi.html#speciali">Servizi Speciali</a></li>
+          <li><a href="servizi.html#giardinaggio" data-i18n="service_gardening">Giardinaggio</a></li>
+          <li><a href="servizi.html#pulizie" data-i18n="service_cleaning">Pulizie</a></li>
+          <li><a href="servizi.html#manutenzione" data-i18n="service_maintenance">Manutenzione Verde</a></li>
+          <li><a href="servizi.html#speciali" data-i18n="service_special">Servizi Speciali</a></li>
         </ul>
       </div>
 
       <div class="footer-section social">
-        <h3>Seguici</h3>
+        <h3 data-i18n="footer_follow_us">Seguici</h3>
         <div class="social-links">
           <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
           <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -248,25 +257,16 @@
 
     <div class="footer-bottom">
       <div class="footer-bottom-content">
-        <p>&copy; 2024 Ecoprogram S.r.l. - P.IVA 12345678901 - Tutti i diritti riservati</p>
+        <p data-i18n="footer_copyright">&copy; 2024 Ecoprogram S.r.l. - P.IVA 12345678901 - Tutti i diritti riservati
+        </p>
         <div class="footer-bottom-links">
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="termini-condizioni.html">Termini e Condizioni</a>
-          <a href="cookie-policy.html">Cookie Policy</a>
+          <a href="privacy-policy.html" data-i18n="footer_privacy">Privacy Policy</a>
+          <a href="termini-condizioni.html" data-i18n="footer_terms">Termini e Condizioni</a>
+          <a href="cookie-policy.html" data-i18n="footer_cookies">Cookie Policy</a>
         </div>
       </div>
     </div>
   </footer>
-
-  <!-- Scripts -->
-  <script src="../script/gallery.js"></script>
-  <script>
-    // Initialize language manager
-    document.addEventListener('DOMContentLoaded', () => {
-      const languageManager = new LanguageManager();
-      languageManager.init();
-    });
-  </script>
 </body>
 
 </html>

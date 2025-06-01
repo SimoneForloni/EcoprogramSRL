@@ -5,27 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy - Ecoprogram</title>
-  <script>
-    // Check saved theme or system preference
-    (function () {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-      }
-    })();
-  </script>
   <link rel="icon" type="image/png" href="../img/logo.png">
   <link rel="stylesheet" href="../style/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <script src="../script/translations.js"></script>
-  <script src="../script/language.js"></script>
-  <script src="../script/app.js" defer></script>
+  <script src="../script/main.js"></script>
 </head>
 
 <body>
@@ -43,32 +26,31 @@
           <i class="fas fa-bars"></i>
         </button>
         <ul class="nav-links">
-          <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
-          <li><a href="servizi.html" data-i18n="nav_services">Servizi</a></li>
-          <li><a href="galleria.html" data-i18n="nav_gallery">Galleria</a></li>
-          <li><a href="chi-siamo.html" data-i18n="nav_about">Chi Siamo</a></li>
-          <li><a href="contatti.html" data-i18n="nav_contacts">Contatti</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="servizi.html">Servizi</a></li>
+          <li><a href="galleria.html">Galleria</a></li>
+          <li><a href="chi-siamo.html">Chi Siamo</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
         </ul>
         <div class="settings-menu">
           <input type="checkbox" id="settingsToggle" class="settings-toggle">
           <label for="settingsToggle" class="settings-btn">
             <i class="fas fa-cog"></i>
-            <span data-i18n="nav_settings">Impostazioni</span>
+            <span>Impostazioni</span>
           </label>
-          <div class="settings-overlay"></div>
-          <label for="settingsToggle" class="settings-overlay-label"></label>
+          <label for="settingsToggle" class="settings-overlay"></label>
           <div class="settings-dropdown">
             <div class="theme-switch">
               <input type="checkbox" id="themeToggle" class="theme-checkbox">
               <label for="themeToggle" class="theme-label">
                 <i class="fas fa-sun"></i>
                 <i class="fas fa-moon"></i>
-                <span data-i18n="settings_theme">Tema Chiaro/Scuro</span>
+                <span>Tema Chiaro/Scuro</span>
               </label>
             </div>
             <div class="settings-divider"></div>
             <div class="font-size-setting">
-              <span class="settings-label" data-i18n="settings_font_size">Dimensione Testo</span>
+              <span class="settings-label">Dimensione Testo</span>
               <div class="font-size-controls">
                 <button class="font-size-btn" data-size="small">A</button>
                 <button class="font-size-btn" data-size="medium">A</button>
@@ -77,12 +59,9 @@
             </div>
             <div class="settings-divider"></div>
             <div class="language-setting">
-              <span class="settings-label" data-i18n="settings_language">Lingua</span>
-              <select class="language-select" id="languageSelect">
+              <span class="settings-label">Lingua</span>
+              <select class="language-select" id="languageSelect" disabled>
                 <option value="it">Italiano</option>
-                <option value="en">English</option>
-                <option value="es">Español</option>
-                <option value="fr">Français</option>
               </select>
             </div>
           </div>
@@ -99,19 +78,29 @@
 
       <section class="legal-section">
         <h2>1. Introduzione</h2>
-        <p>La presente Privacy Policy descrive le modalità con cui Ecoprogram S.r.l. ("noi" o "nostro") raccoglie,
-          utilizza e protegge le informazioni personali degli utenti che visitano il nostro sito web e utilizzano i
+        <p>La presente Privacy Policy descrive le modalità con cui Ecoprogram S.r.l. (di seguito "noi" o "Ecoprogram")
+          raccoglie, utilizza e protegge i dati personali degli utenti che visitano il nostro sito web o utilizzano i
           nostri servizi.</p>
       </section>
 
       <section class="legal-section">
         <h2>2. Dati Raccolti</h2>
-        <p>Raccogliamo i seguenti tipi di informazioni:</p>
+        <h3>2.1 Dati forniti volontariamente</h3>
+        <p>Raccogliamo i dati che ci fornisci direttamente quando:</p>
         <ul>
-          <li>Dati di contatto (nome, email, telefono, indirizzo)</li>
-          <li>Informazioni sulla navigazione del sito</li>
-          <li>Dati relativi ai servizi richiesti</li>
-          <li>Cookie e dati di utilizzo</li>
+          <li>Compili i nostri moduli di contatto</li>
+          <li>Richiedi un preventivo</li>
+          <li>Ti iscrivi alla nostra newsletter</li>
+          <li>Interagisci con noi attraverso i social media</li>
+        </ul>
+
+        <h3>2.2 Dati raccolti automaticamente</h3>
+        <p>Quando visiti il nostro sito, raccogliamo automaticamente:</p>
+        <ul>
+          <li>Indirizzo IP</li>
+          <li>Tipo di browser e dispositivo</li>
+          <li>Pagine visitate e tempo di permanenza</li>
+          <li>Cookie tecnici necessari al funzionamento del sito</li>
         </ul>
       </section>
 
@@ -119,51 +108,64 @@
         <h2>3. Utilizzo dei Dati</h2>
         <p>Utilizziamo i dati raccolti per:</p>
         <ul>
-          <li>Fornire e migliorare i nostri servizi</li>
-          <li>Comunicare con gli utenti</li>
-          <li>Processare le richieste di preventivo</li>
-          <li>Inviare newsletter (previo consenso)</li>
+          <li>Fornire i servizi richiesti</li>
+          <li>Rispondere alle tue richieste</li>
+          <li>Migliorare i nostri servizi</li>
+          <li>Inviare comunicazioni di marketing (solo con il tuo consenso)</li>
           <li>Adempiere agli obblighi legali</li>
         </ul>
       </section>
 
       <section class="legal-section">
         <h2>4. Condivisione dei Dati</h2>
-        <p>Non vendiamo i dati personali degli utenti. I dati possono essere condivisi con:</p>
+        <p>Non vendiamo i tuoi dati personali a terzi. Possiamo condividere i tuoi dati con:</p>
         <ul>
-          <li>Fornitori di servizi che ci assistono</li>
-          <li>Autorità competenti (se richiesto dalla legge)</li>
-          <li>Partner commerciali (previo consenso)</li>
+          <li>Fornitori di servizi che ci aiutano a gestire il sito</li>
+          <li>Autorità pubbliche quando richiesto dalla legge</li>
+          <li>Partner commerciali (solo con il tuo consenso)</li>
         </ul>
       </section>
 
       <section class="legal-section">
-        <h2>5. Diritti degli Utenti</h2>
-        <p>Gli utenti hanno il diritto di:</p>
+        <h2>5. Protezione dei Dati</h2>
+        <p>Adottiamo misure di sicurezza tecniche e organizzative per proteggere i tuoi dati personali, tra cui:</p>
         <ul>
-          <li>Accedere ai propri dati personali</li>
-          <li>Richiedere la rettifica o la cancellazione dei dati</li>
-          <li>Limitare il trattamento dei dati</li>
-          <li>Opporsi al trattamento</li>
-          <li>Richiedere la portabilità dei dati</li>
+          <li>Crittografia dei dati in transito</li>
+          <li>Accesso limitato ai dati personali</li>
+          <li>Monitoraggio regolare dei sistemi di sicurezza</li>
+          <li>Formazione del personale sulla protezione dei dati</li>
         </ul>
       </section>
 
       <section class="legal-section">
-        <h2>6. Sicurezza dei Dati</h2>
-        <p>Adottiamo misure di sicurezza tecniche e organizzative per proteggere i dati personali da accessi non
-          autorizzati, perdita o alterazione.</p>
+        <h2>6. I Tuoi Diritti</h2>
+        <p>Hai il diritto di:</p>
+        <ul>
+          <li>Accedere ai tuoi dati personali</li>
+          <li>Richiedere la rettifica dei dati inesatti</li>
+          <li>Richiedere la cancellazione dei dati</li>
+          <li>Opporti al trattamento dei dati</li>
+          <li>Richiedere la limitazione del trattamento</li>
+          <li>Ricevere i tuoi dati in formato strutturato (portabilità)</li>
+        </ul>
       </section>
 
       <section class="legal-section">
         <h2>7. Contatti</h2>
-        <p>Per qualsiasi domanda sulla nostra Privacy Policy, contattare:</p>
+        <p>Per qualsiasi domanda sulla nostra Privacy Policy o per esercitare i tuoi diritti, puoi contattarci:</p>
         <div class="contact-details">
-          <p>Ecoprogram S.r.l.</p>
+          <p><strong>Ecoprogram S.r.l.</strong></p>
+          <p>Via Catalafimi, 12 - Buccinasco (MI)</p>
           <p>Email: privacy@ecoprogram.it</p>
           <p>Tel: +39 02 1234567</p>
-          <p>Indirizzo: Via Example, 123 - Milano</p>
         </div>
+      </section>
+
+      <section class="legal-section">
+        <h2>8. Modifiche alla Privacy Policy</h2>
+        <p>Ci riserviamo il diritto di modificare questa Privacy Policy in qualsiasi momento. Le modifiche saranno
+          pubblicate su questa pagina con la data di ultimo aggiornamento. Ti invitiamo a consultare regolarmente questa
+          pagina.</p>
       </section>
     </div>
   </main>
@@ -172,41 +174,42 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-section company-info">
-        <h3 data-i18n="footer_company">Ecoprogram S.r.l.</h3>
-        <p data-i18n="footer_desc">La tua scelta di fiducia per servizi di giardinaggio e pulizie professionali dal
-          2010.</p>
+        <h3>Ecoprogram S.r.l.</h3>
+        <p>La tua scelta di fiducia per servizi di giardinaggio e pulizie professionali dal
+          1993.</p>
         <div class="contact-info">
-          <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">Via Example, 123 - Milano</span></p>
-          <p><i class="fas fa-phone"></i> <span data-i18n="footer_phone">+39 02 1234567</span></p>
-          <p><i class="fas fa-envelope"></i> <span data-i18n="footer_email">info@ecoprogram.it</span></p>
-          <p><i class="fas fa-clock"></i> <span data-i18n="footer_hours">Lun - Ven: 8:00 - 18:00</span></p>
-          <p class="indent" data-i18n="footer_hours_sat">Sab: 8:00 - 12:00</p>
+          <p><i class="fas fa-map-marker-alt"></i> <span>Via Catalafimi, 12 - Buccinasco
+              (MI)</span></p>
+          <p><i class="fas fa-phone"></i> <span>+39 02 1234567</span></p>
+          <p><i class="fas fa-envelope"></i> <span>info@ecoprogram.it</span></p>
+          <p><i class="fas fa-clock"></i> <span>Lun - Ven: 8:00 - 18:00</span></p>
+          <p class="indent">Sab: 8:00 - 12:00</p>
         </div>
       </div>
 
       <div class="footer-section quick-links">
-        <h3 data-i18n="footer_quick_links">Link Rapidi</h3>
+        <h3>Link Rapidi</h3>
         <ul>
-          <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
-          <li><a href="servizi.html" data-i18n="nav_services">Servizi</a></li>
-          <li><a href="galleria.html" data-i18n="nav_gallery">Galleria</a></li>
-          <li><a href="chi-siamo.html" data-i18n="nav_about">Chi Siamo</a></li>
-          <li><a href="contatti.html" data-i18n="nav_contacts">Contatti</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="servizi.html">Servizi</a></li>
+          <li><a href="galleria.html">Galleria</a></li>
+          <li><a href="chi-siamo.html">Chi Siamo</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
         </ul>
       </div>
 
       <div class="footer-section services-links">
-        <h3 data-i18n="footer_our_services">I Nostri Servizi</h3>
+        <h3>I Nostri Servizi</h3>
         <ul>
-          <li><a href="servizi.html#giardinaggio" data-i18n="service_gardening">Giardinaggio</a></li>
-          <li><a href="servizi.html#pulizie" data-i18n="service_cleaning">Pulizie</a></li>
-          <li><a href="servizi.html#manutenzione" data-i18n="service_maintenance">Manutenzione Verde</a></li>
-          <li><a href="servizi.html#speciali" data-i18n="service_special">Servizi Speciali</a></li>
+          <li><a href="servizi.html#giardinaggio">Giardinaggio</a></li>
+          <li><a href="servizi.html#pulizie">Pulizie</a></li>
+          <li><a href="servizi.html#manutenzione">Manutenzione Verde</a></li>
+          <li><a href="servizi.html#speciali">Servizi Speciali</a></li>
         </ul>
       </div>
 
       <div class="footer-section social">
-        <h3 data-i18n="footer_follow_us">Seguici</h3>
+        <h3>Seguici</h3>
         <div class="social-links">
           <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
           <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -217,7 +220,8 @@
 
     <div class="footer-bottom">
       <div class="footer-bottom-content">
-        <p>&copy; 2024 Ecoprogram S.r.l. - P.IVA 12345678901 - Tutti i diritti riservati</p>
+        <p>&copy; 2024 Ecoprogram S.r.l. - P.IVA 12345678901 - Tutti i diritti riservati
+        </p>
         <div class="footer-bottom-links">
           <a href="privacy-policy.html">Privacy Policy</a>
           <a href="termini-condizioni.html">Termini e Condizioni</a>
@@ -226,16 +230,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Scripts -->
-  <script src="../script/app.js"></script>
-  <script>
-    // Initialize language manager
-    document.addEventListener('DOMContentLoaded', () => {
-      const languageManager = new LanguageManager();
-      languageManager.init();
-    });
-  </script>
 </body>
 
 </html>

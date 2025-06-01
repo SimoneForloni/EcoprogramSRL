@@ -1,120 +1,93 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const contactForm = document.getElementById('contact-form');
-  const formGroups = document.querySelectorAll('.form-group');
+// Contact form handling
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('.contact-form');
+  if (!form) return;
 
-  // Form validation
-  function validateForm() {
-    let isValid = true;
-    const errorMessages = {
-      name: 'Inserisci il tuo nome e cognome',
-      email: 'Inserisci un indirizzo email valido',
-      service: 'Seleziona un servizio',
-      message: 'Inserisci un messaggio',
-      privacy: 'Devi accettare la Privacy Policy'
-    };
-
-    // Remove existing error messages
-    document.querySelectorAll('.error-message').forEach(el => el.remove());
-
-    formGroups.forEach(group => {
-      const input = group.querySelector('input, select, textarea');
-      if (!input) return;
-
-      const isRequired = input.hasAttribute('required');
-      if (!isRequired) return;
-
-      let hasError = false;
-
-      if (input.type === 'email') {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        hasError = !emailRegex.test(input.value.trim());
-      } else if (input.type === 'checkbox') {
-        hasError = !input.checked;
-      } else {
-        hasError = !input.value.trim();
-      }
-
-      if (hasError) {
-        isValid = false;
-        const errorMessage = document.createElement('div');
-        errorMessage.className = 'error-message';
-        errorMessage.textContent = errorMessages[input.name];
-        group.appendChild(errorMessage);
-        input.classList.add('error');
-      } else {
-        input.classList.remove('error');
-      }
-    });
-
-    return isValid;
-  }
-
-  // Real-time validation
-  formGroups.forEach(group => {
-    const input = group.querySelector('input, select, textarea');
-    if (!input) return;
-
-    input.addEventListener('input', () => {
-      // Remove error styling
-      input.classList.remove('error');
-      const errorMessage = group.querySelector('.error-message');
-      if (errorMessage) {
-        errorMessage.remove();
-      }
-    });
-  });
-
-  // Form submission
-  contactForm.addEventListener('submit', async function (e) {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    if (!validateForm()) {
+    if (!validateForm(form)) {
+      showMessage('Per favore, compila tutti i campi richiesti.', 'error');
       return;
     }
 
-    // Get form data
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData.entries());
-
     try {
-      // Show loading state
-      const submitBtn = contactForm.querySelector('.submit-btn');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Invio in corso...';
-      submitBtn.disabled = true;
+      const formData = new FormData(form);
+      const response = await submitForm(formData);
 
-      // Simulate API call (replace with actual API endpoint)
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      // Show success message
-      const successMessage = document.createElement('div');
-      successMessage.className = 'success-message';
-      successMessage.textContent = 'Grazie per averci contattato! Ti risponderemo al più presto.';
-      contactForm.insertAdjacentElement('beforebegin', successMessage);
-
-      // Reset form
-      contactForm.reset();
-
-      // Remove success message after 5 seconds
-      setTimeout(() => {
-        successMessage.remove();
-      }, 5000);
+      if (response.success) {
+        showMessage('Grazie per averci contattato! Ti risponderemo presto.', 'success');
+        form.reset();
+      } else {
+        throw new Error(response.message || 'Errore durante l\'invio del modulo.');
+      }
     } catch (error) {
-      // Show error message
-      const errorMessage = document.createElement('div');
-      errorMessage.className = 'error-message';
-      errorMessage.textContent = 'Si è verificato un errore. Riprova più tardi.';
-      contactForm.insertAdjacentElement('beforebegin', errorMessage);
-
-      // Remove error message after 5 seconds
-      setTimeout(() => {
-        errorMessage.remove();
-      }, 5000);
-    } finally {
-      // Reset button state
-      const submitBtn = contactForm.querySelector('.submit-btn');
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
+      showMessage(error.message, 'error');
+      console.error('Form submission error:', error);
     }
   });
-}); 
+});
+
+// Form validation
+function validateForm(form) {
+  const requiredFields = form.querySelectorAll('[required]');
+  let isValid = true;
+
+  requiredFields.forEach(field => {
+    if (!field.value.trim()) {
+      field.classList.add('error');
+      isValid = false;
+    } else {
+      field.classList.remove('error');
+    }
+
+    // Email validation
+    if (field.type === 'email' && field.value) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(field.value)) {
+        field.classList.add('error');
+        isValid = false;
+      }
+    }
+  });
+
+  return isValid;
+}
+
+// Form submission
+async function submitForm(formData) {
+  const endpoint = '/api/contact'; // Replace with your actual endpoint
+
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    return await response.json();
+  } catch (error) {
+    throw new Error('Si è verificato un errore durante l\'invio. Riprova più tardi.');
+  }
+}
+
+// Message display
+function showMessage(message, type) {
+  const messageContainer = document.querySelector('.form-message');
+  if (!messageContainer) return;
+
+  messageContainer.textContent = message;
+  messageContainer.className = `form-message ${type}`;
+  messageContainer.style.display = 'block';
+
+  // Auto-hide message after 5 seconds
+  setTimeout(() => {
+    messageContainer.style.display = 'none';
+  }, 5000);
+} 

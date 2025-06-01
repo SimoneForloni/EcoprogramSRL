@@ -5,27 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Termini e Condizioni - Ecoprogram</title>
-  <script>
-    // Check saved theme or system preference
-    (function () {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-      }
-    })();
-  </script>
   <link rel="icon" type="image/png" href="../img/logo.png">
   <link rel="stylesheet" href="../style/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <script src="../script/translations.js"></script>
-  <script src="../script/language.js"></script>
-  <script src="../script/app.js" defer></script>
+  <script src="../script/main.js"></script>
 </head>
 
 <body>
@@ -55,7 +38,7 @@
             <i class="fas fa-cog"></i>
             <span data-i18n="nav_settings">Impostazioni</span>
           </label>
-          <div class="settings-overlay" onclick="document.getElementById('settingsToggle').checked = false;"></div>
+          <label for="settingsToggle" class="settings-overlay"></label>
           <div class="settings-dropdown">
             <div class="theme-switch">
               <input type="checkbox" id="themeToggle" class="theme-checkbox">
@@ -97,83 +80,129 @@
       <p class="last-updated">Ultimo aggiornamento: 1 Marzo 2024</p>
 
       <section class="legal-section">
-        <h2>1. Accettazione dei Termini</h2>
-        <p>Utilizzando il sito web di Ecoprogram S.r.l. e i nostri servizi, l'utente accetta di essere vincolato dai
-          presenti termini e condizioni. Si prega di leggerli attentamente prima di utilizzare il sito o i nostri
-          servizi.</p>
+        <h2>1. Introduzione</h2>
+        <p>Questi Termini e Condizioni regolano l'utilizzo del sito web di Ecoprogram S.r.l. e la fornitura dei nostri
+          servizi. Utilizzando il nostro sito web o richiedendo i nostri servizi, accetti di essere vincolato da questi
+          termini.</p>
       </section>
 
       <section class="legal-section">
-        <h2>2. Descrizione dei Servizi</h2>
-        <p>Ecoprogram S.r.l. fornisce servizi di:</p>
+        <h2>2. Definizioni</h2>
         <ul>
-          <li>Giardinaggio professionale</li>
-          <li>Manutenzione aree verdi</li>
+          <li>"Noi", "nostro", "Ecoprogram" si riferiscono a Ecoprogram S.r.l.</li>
+          <li>"Tu", "tuo", "Cliente" si riferiscono all'utente del sito o al cliente dei nostri servizi</li>
+          <li>"Servizi" si riferisce a tutti i servizi offerti da Ecoprogram</li>
+          <li>"Sito" si riferisce al sito web www.ecoprogram.it</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>3. Servizi</h2>
+        <h3>3.1 Descrizione dei Servizi</h3>
+        <p>Offriamo servizi di giardinaggio, pulizia e manutenzione, inclusi ma non limitati a:</p>
+        <ul>
+          <li>Manutenzione giardini e aree verdi</li>
           <li>Pulizie civili e industriali</li>
           <li>Servizi di sanificazione</li>
+          <li>Trattamenti specifici</li>
         </ul>
-        <p>Ci riserviamo il diritto di modificare o interrompere qualsiasi aspetto dei nostri servizi in qualsiasi
-          momento.</p>
+
+        <h3>3.2 Qualità dei Servizi</h3>
+        <p>Ci impegniamo a fornire servizi di alta qualità, utilizzando personale qualificato e prodotti professionali.
+          Tutti i nostri servizi sono eseguiti nel rispetto delle normative vigenti e degli standard di sicurezza.</p>
       </section>
 
       <section class="legal-section">
-        <h2>3. Preventivi e Contratti</h2>
-        <p>I preventivi forniti:</p>
+        <h2>4. Preventivi e Contratti</h2>
+        <h3>4.1 Richiesta Preventivi</h3>
+        <p>I preventivi sono gratuiti e non vincolanti. Per richiedere un preventivo, è necessario fornire informazioni
+          accurate e complete sul servizio desiderato.</p>
+
+        <h3>4.2 Validità dei Preventivi</h3>
+        <p>I preventivi hanno una validità di 30 giorni dalla data di emissione, salvo diversamente specificato.</p>
+
+        <h3>4.3 Conclusione del Contratto</h3>
+        <p>Il contratto si considera concluso solo dopo la nostra conferma scritta dell'accettazione del preventivo da
+          parte del cliente.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>5. Pagamenti</h2>
+        <h3>5.1 Modalità di Pagamento</h3>
+        <p>Accettiamo le seguenti modalità di pagamento:</p>
         <ul>
-          <li>Sono validi per 30 giorni dalla data di emissione</li>
-          <li>Sono basati sulle informazioni fornite dal cliente</li>
-          <li>Possono essere soggetti a modifiche dopo il sopralluogo</li>
-          <li>Non includono servizi extra non specificati</li>
+          <li>Bonifico bancario</li>
+          <li>Carte di credito/debito</li>
+          <li>Contanti (nei limiti previsti dalla legge)</li>
         </ul>
+
+        <h3>5.2 Termini di Pagamento</h3>
+        <p>I termini di pagamento sono specificati nel preventivo e/o nel contratto. In assenza di specifiche
+          indicazioni, il pagamento è dovuto al completamento del servizio.</p>
       </section>
 
       <section class="legal-section">
-        <h2>4. Pagamenti</h2>
-        <p>Le condizioni di pagamento prevedono:</p>
+        <h2>6. Cancellazioni e Modifiche</h2>
+        <h3>6.1 Cancellazione dei Servizi</h3>
+        <p>Per cancellare un servizio programmato è necessario un preavviso di almeno 48 ore. Cancellazioni con
+          preavviso inferiore potrebbero comportare l'addebito di una penale.</p>
+
+        <h3>6.2 Modifiche ai Servizi</h3>
+        <p>Ci riserviamo il diritto di apportare modifiche ai nostri servizi per migliorarne la qualità o adeguarli a
+          nuove normative, dandone preventiva comunicazione al cliente.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>7. Responsabilità</h2>
+        <h3>7.1 Nostri Obblighi</h3>
+        <p>Ci impegniamo a:</p>
         <ul>
-          <li>Pagamento entro 30 giorni dalla fattura</li>
-          <li>Acconto del 30% per progetti di grande entità</li>
-          <li>Metodi di pagamento accettati: bonifico bancario, carte di credito</li>
-          <li>Possibilità di piani di pagamento personalizzati per contratti continuativi</li>
+          <li>Fornire i servizi con professionalità e diligenza</li>
+          <li>Rispettare le normative di sicurezza</li>
+          <li>Mantenere adeguate coperture assicurative</li>
+          <li>Proteggere i dati personali dei clienti</li>
         </ul>
-      </section>
 
-      <section class="legal-section">
-        <h2>5. Responsabilità</h2>
-        <p>Ecoprogram S.r.l.:</p>
+        <h3>7.2 Limitazioni di Responsabilità</h3>
+        <p>Non siamo responsabili per:</p>
         <ul>
-          <li>È assicurata per responsabilità civile</li>
-          <li>Si impegna a eseguire i servizi con professionalità</li>
-          <li>Non è responsabile per danni causati da informazioni errate fornite dal cliente</li>
-          <li>Si riserva il diritto di rifiutare servizi in condizioni non sicure</li>
+          <li>Danni causati da informazioni errate fornite dal cliente</li>
+          <li>Ritardi dovuti a cause di forza maggiore</li>
+          <li>Danni indiretti o consequenziali</li>
         </ul>
       </section>
 
       <section class="legal-section">
-        <h2>6. Cancellazioni e Rimborsi</h2>
-        <p>Policy di cancellazione:</p>
-        <ul>
-          <li>Preavviso minimo di 48 ore per cancellazioni</li>
-          <li>Penale del 50% per cancellazioni tardive</li>
-          <li>Rimborso completo per servizi non iniziati</li>
-          <li>Valutazione caso per caso per servizi in corso</li>
-        </ul>
+        <h2>8. Proprietà Intellettuale</h2>
+        <p>Tutti i contenuti del sito web, inclusi testi, immagini, loghi e design, sono di nostra proprietà o
+          utilizzati su licenza. È vietata la riproduzione senza autorizzazione.</p>
       </section>
 
       <section class="legal-section">
-        <h2>7. Proprietà Intellettuale</h2>
-        <p>Tutti i contenuti del sito web sono di proprietà di Ecoprogram S.r.l. e sono protetti dalle leggi sul
-          copyright. Non è consentito l'utilizzo senza autorizzazione scritta.</p>
+        <h2>9. Privacy e Dati Personali</h2>
+        <p>Il trattamento dei dati personali è regolato dalla nostra Privacy Policy, disponibile sul sito web.</p>
       </section>
 
       <section class="legal-section">
-        <h2>8. Contatti</h2>
-        <p>Per qualsiasi domanda sui nostri termini e condizioni, contattare:</p>
+        <h2>10. Modifiche ai Termini</h2>
+        <p>Ci riserviamo il diritto di modificare questi Termini e Condizioni in qualsiasi momento. Le modifiche saranno
+          efficaci dalla data di pubblicazione sul sito.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>11. Legge Applicabile e Foro Competente</h2>
+        <p>Questi Termini e Condizioni sono regolati dalla legge italiana. Per qualsiasi controversia è competente il
+          Foro di Milano.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>12. Contatti</h2>
+        <p>Per qualsiasi domanda sui nostri Termini e Condizioni, puoi contattarci:</p>
         <div class="contact-details">
-          <p>Ecoprogram S.r.l.</p>
+          <p><strong>Ecoprogram S.r.l.</strong></p>
+          <p>Via Example, 123 - Milano</p>
           <p>Email: info@ecoprogram.it</p>
           <p>Tel: +39 02 1234567</p>
-          <p>Indirizzo: Via Example, 123 - Milano</p>
         </div>
       </section>
     </div>
@@ -185,9 +214,10 @@
       <div class="footer-section company-info">
         <h3 data-i18n="footer_company">Ecoprogram S.r.l.</h3>
         <p data-i18n="footer_desc">La tua scelta di fiducia per servizi di giardinaggio e pulizie professionali dal
-          2010.</p>
+          1993.</p>
         <div class="contact-info">
-          <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">Via Example, 123 - Milano</span></p>
+          <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">Via Catalafimi, 12 - Buccinasco
+              (MI)</span></p>
           <p><i class="fas fa-phone"></i> <span data-i18n="footer_phone">+39 02 1234567</span></p>
           <p><i class="fas fa-envelope"></i> <span data-i18n="footer_email">info@ecoprogram.it</span></p>
           <p><i class="fas fa-clock"></i> <span data-i18n="footer_hours">Lun - Ven: 8:00 - 18:00</span></p>
@@ -228,25 +258,16 @@
 
     <div class="footer-bottom">
       <div class="footer-bottom-content">
-        <p>&copy; 2024 Ecoprogram S.r.l. - P.IVA 12345678901 - Tutti i diritti riservati</p>
+        <p data-i18n="footer_copyright">&copy; 2024 Ecoprogram S.r.l. - P.IVA 12345678901 - Tutti i diritti riservati
+        </p>
         <div class="footer-bottom-links">
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="termini-condizioni.html">Termini e Condizioni</a>
-          <a href="cookie-policy.html">Cookie Policy</a>
+          <a href="privacy-policy.html" data-i18n="footer_privacy">Privacy Policy</a>
+          <a href="termini-condizioni.html" data-i18n="footer_terms">Termini e Condizioni</a>
+          <a href="cookie-policy.html" data-i18n="footer_cookies">Cookie Policy</a>
         </div>
       </div>
     </div>
   </footer>
-
-  <!-- Scripts -->
-  <script src="../script/app.js"></script>
-  <script>
-    // Initialize language manager
-    document.addEventListener('DOMContentLoaded', () => {
-      const languageManager = new LanguageManager();
-      languageManager.init();
-    });
-  </script>
 </body>
 
 </html>
