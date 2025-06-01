@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -8,6 +8,9 @@
   <link rel="icon" type="image/png" href="img/logo.png">
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="script/translations.js"></script>
+  <script src="script/language.js"></script>
+  <script src="script/theme.js" defer></script>
 </head>
 
 <body>
@@ -20,24 +23,60 @@
           <h1>Ecoprogram</h1>
         </div>
       </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pages/servizi.html">Servizi</a></li>
-        <li><a href="pages/galleria.html">Galleria</a></li>
-        <li><a href="pages/chi-siamo.html">Chi Siamo</a></li>
-        <li><a href="pages/contatti.html">Contatti</a></li>
-      </ul>
+      <div class="nav-container">
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="pages/servizi.html" data-i18n="nav_services">Servizi</a></li>
+          <li><a href="pages/galleria.html" data-i18n="nav_gallery">Galleria</a></li>
+          <li><a href="pages/chi-siamo.html" data-i18n="nav_about">Chi Siamo</a></li>
+          <li><a href="pages/contatti.html" data-i18n="nav_contacts">Contatti</a></li>
+        </ul>
+        <div class="settings-menu">
+          <button class="settings-btn">
+            <i class="fas fa-cog"></i>
+            <span data-i18n="nav_settings">Impostazioni</span>
+          </button>
+          <div class="settings-dropdown">
+            <div class="theme-switch" id="themeSwitch">
+              <i class="fas fa-sun"></i>
+              <span data-i18n="settings_theme">Tema Chiaro/Scuro</span>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="font-size-setting">
+              <span class="settings-label" data-i18n="settings_font_size">Dimensione Testo</span>
+              <div class="font-size-controls">
+                <button class="font-size-btn" data-size="small">A</button>
+                <button class="font-size-btn" data-size="medium">A</button>
+                <button class="font-size-btn" data-size="large">A</button>
+              </div>
+            </div>
+            <div class="settings-divider"></div>
+            <div class="language-setting">
+              <span class="settings-label" data-i18n="settings_language">Lingua</span>
+              <select class="language-select" id="languageSelect">
+                <option value="it">Italiano</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h1>Servizi Professionali di Giardinaggio e Pulizie</h1>
-      <p>Trasformiamo i tuoi spazi con passione e professionalità</p>
+      <h1 data-i18n="hero_title">Servizi Professionali di Giardinaggio e Pulizie</h1>
+      <p data-i18n="hero_subtitle">Trasformiamo i tuoi spazi con passione e professionalità</p>
       <div class="hero-buttons">
-        <a href="pages/servizi.html" class="cta-button">Scopri i Nostri Servizi</a>
-        <a href="pages/contatti.html" class="cta-button secondary">Richiedi un Preventivo</a>
+        <a href="pages/servizi.html" class="cta-button" data-i18n="hero_cta_services">Scopri i Nostri Servizi</a>
+        <a href="pages/contatti.html" class="cta-button secondary" data-i18n="hero_cta_quote">Richiedi un Preventivo</a>
       </div>
     </div>
   </section>
@@ -47,23 +86,23 @@
     <div class="features-grid">
       <div class="feature-item">
         <i class="fas fa-leaf"></i>
-        <h3>Esperienza</h3>
-        <p>Oltre 10 anni di esperienza nel settore</p>
+        <h3 data-i18n="feature_experience">Esperienza</h3>
+        <p data-i18n="feature_experience_desc">Oltre 10 anni di esperienza nel settore</p>
       </div>
       <div class="feature-item">
         <i class="fas fa-certificate"></i>
-        <h3>Qualità</h3>
-        <p>Servizi certificati e personale qualificato</p>
+        <h3 data-i18n="feature_quality">Qualità</h3>
+        <p data-i18n="feature_quality_desc">Servizi certificati e personale qualificato</p>
       </div>
       <div class="feature-item">
         <i class="fas fa-clock"></i>
-        <h3>Puntualità</h3>
-        <p>Rispetto dei tempi e delle scadenze</p>
+        <h3 data-i18n="feature_punctuality">Puntualità</h3>
+        <p data-i18n="feature_punctuality_desc">Rispetto dei tempi e delle scadenze</p>
       </div>
       <div class="feature-item">
         <i class="fas fa-heart"></i>
-        <h3>Passione</h3>
-        <p>Amore per il nostro lavoro</p>
+        <h3 data-i18n="feature_passion">Passione</h3>
+        <p data-i18n="feature_passion_desc">Amore per il nostro lavoro</p>
       </div>
     </div>
   </section>
@@ -71,67 +110,72 @@
   <!-- Servizi Section -->
   <section id="servizi" class="services">
     <div class="section-header">
-      <h2>I Nostri Servizi</h2>
-      <p>Soluzioni professionali per ogni esigenza</p>
+      <h2 data-i18n="services_title">I Nostri Servizi</h2>
+      <p data-i18n="services_subtitle">Soluzioni professionali per ogni esigenza</p>
     </div>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon">
           <i class="fas fa-leaf"></i>
         </div>
-        <h3>Giardinaggio</h3>
+        <h3 class="service-title" data-i18n="service_gardening">Giardinaggio</h3>
         <ul>
-          <li><i class="fas fa-check"></i> Manutenzione giardini</li>
-          <li><i class="fas fa-check"></i> Potatura piante e siepi</li>
-          <li><i class="fas fa-check"></i> Progettazione spazi verdi</li>
-          <li><i class="fas fa-check"></i> Sistemi di irrigazione</li>
-          <li><i class="fas fa-check"></i> Trattamenti fitosanitari</li>
+          <li><i class="fas fa-check"></i> <span data-i18n="gardening_1">Manutenzione giardini</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="gardening_2">Potatura piante e siepi</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="gardening_3">Progettazione spazi verdi</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="gardening_4">Sistemi di irrigazione</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="gardening_5">Trattamenti fitosanitari</span></li>
         </ul>
-        <a href="pages/servizi.html#giardinaggio" class="service-link">Scopri di più <i
+        <a href="pages/servizi.html#giardinaggio" class="service-link" data-i18n="discover_more">Scopri di più<i
             class="fas fa-arrow-right"></i></a>
       </div>
+
       <div class="service-card">
         <div class="service-icon">
           <i class="fas fa-broom"></i>
         </div>
-        <h3>Pulizie</h3>
+        <h3 class="service-title" data-i18n="service_cleaning">Pulizie</h3>
         <ul>
-          <li><i class="fas fa-check"></i> Pulizie domestiche</li>
-          <li><i class="fas fa-check"></i> Pulizie uffici e negozi</li>
-          <li><i class="fas fa-check"></i> Pulizie condomini</li>
-          <li><i class="fas fa-check"></i> Sanificazione ambienti</li>
-          <li><i class="fas fa-check"></i> Pulizie post cantiere</li>
+          <li><i class="fas fa-check"></i> <span data-i18n="cleaning_1">Pulizie domestiche</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="cleaning_2">Pulizie uffici e negozi</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="cleaning_3">Pulizie condomini</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="cleaning_4">Sanificazione ambienti</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="cleaning_5">Pulizie post cantiere</span></li>
         </ul>
-        <a href="pages/servizi.html#pulizie" class="service-link">Scopri di più <i class="fas fa-arrow-right"></i></a>
+        <a href="pages/servizi.html#pulizie" class="service-link" data-i18n="discover_more">Scopri di più<i
+            class="fas fa-arrow-right"></i></a>
       </div>
+
       <div class="service-card">
         <div class="service-icon">
           <i class="fas fa-tree"></i>
         </div>
-        <h3>Manutenzione Verde</h3>
+        <h3 class="service-title" data-i18n="service_maintenance">Manutenzione Verde</h3>
         <ul>
-          <li><i class="fas fa-check"></i> Taglio prato</li>
-          <li><i class="fas fa-check"></i> Abbattimento alberi</li>
-          <li><i class="fas fa-check"></i> Controllo parassiti</li>
-          <li><i class="fas fa-check"></i> Concimazione</li>
-          <li><i class="fas fa-check"></i> Manutenzione stagionale</li>
+          <li><i class="fas fa-check"></i> <span data-i18n="maintenance_1">Taglio prato</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="maintenance_2">Abbattimento alberi</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="maintenance_3">Controllo parassiti</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="maintenance_4">Concimazione</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="maintenance_5">Manutenzione stagionale</span></li>
         </ul>
-        <a href="pages/servizi.html#manutenzione" class="service-link">Scopri di più <i
+        <a href="pages/servizi.html#manutenzione" class="service-link" data-i18n="discover_more">Scopri di più<i
             class="fas fa-arrow-right"></i></a>
       </div>
+
       <div class="service-card">
         <div class="service-icon">
           <i class="fas fa-spray-can"></i>
         </div>
-        <h3>Servizi Speciali</h3>
+        <h3 class="service-title" data-i18n="service_special">Servizi Speciali</h3>
         <ul>
-          <li><i class="fas fa-check"></i> Disinfestazioni</li>
-          <li><i class="fas fa-check"></i> Derattizzazione</li>
-          <li><i class="fas fa-check"></i> Sanificazione COVID-19</li>
-          <li><i class="fas fa-check"></i> Pulizia vetrate</li>
-          <li><i class="fas fa-check"></i> Trattamenti specifici</li>
+          <li><i class="fas fa-check"></i> <span data-i18n="special_1">Disinfestazioni</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="special_2">Derattizzazione</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="special_3">Sanificazione COVID-19</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="special_4">Pulizia vetrate</span></li>
+          <li><i class="fas fa-check"></i> <span data-i18n="special_5">Trattamenti specifici</span></li>
         </ul>
-        <a href="pages/servizi.html#speciali" class="service-link">Scopri di più <i class="fas fa-arrow-right"></i></a>
+        <a href="pages/servizi.html#speciali" class="service-link" data-i18n="discover_more">Scopri di più<i
+            class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </section>
@@ -140,52 +184,54 @@
   <section id="chi-siamo" class="about">
     <div class="about-container">
       <div class="about-text">
-        <h2>Chi Siamo</h2>
-        <p>Ecoprogram è un'azienda leader nel settore del giardinaggio e delle pulizie professionali. Da anni ci
-          prendiamo cura degli spazi verdi e degli ambienti dei nostri clienti con passione e professionalità.</p>
-        <p>Il nostro team di esperti è formato da professionisti qualificati che utilizzano attrezzature e prodotti
-          di ultima generazione, nel rispetto dell'ambiente.</p>
+        <h2 data-i18n="about_title">Chi Siamo</h2>
+        <p data-i18n="about_desc_1">Ecoprogram è un'azienda leader nel settore del giardinaggio e delle pulizie
+          professionali. Da anni ci prendiamo cura degli spazi verdi e degli ambienti dei nostri clienti con passione e
+          professionalità.</p>
+        <p data-i18n="about_desc_2">Il nostro team di esperti è formato da professionisti qualificati che utilizzano
+          attrezzature e prodotti di ultima generazione, nel rispetto dell'ambiente.</p>
         <div class="about-stats">
           <div class="stat-item">
             <span class="stat-number">10+</span>
-            <span class="stat-label">Anni di Esperienza</span>
+            <span class="stat-label" data-i18n="about_years">Anni di Esperienza</span>
           </div>
           <div class="stat-item">
             <span class="stat-number">500+</span>
-            <span class="stat-label">Clienti Soddisfatti</span>
+            <span class="stat-label" data-i18n="about_clients">Clienti Soddisfatti</span>
           </div>
           <div class="stat-item">
             <span class="stat-number">20+</span>
-            <span class="stat-label">Professionisti</span>
+            <span class="stat-label" data-i18n="about_professionals">Professionisti</span>
           </div>
         </div>
-        <a href="pages/chi-siamo.html" class="cta-button">Scopri la Nostra Storia</a>
+        <a href="pages/chi-siamo.html" class="cta-button" data-i18n="about_cta">Scopri la Nostra Storia</a>
       </div>
     </div>
   </section>
 
   <!-- Testimonials Section -->
   <section class="testimonials">
-    <h2>Dicono di Noi</h2>
+    <h2 data-i18n="testimonials_title">Dicono di Noi</h2>
     <div class="testimonials-grid">
       <div class="testimonial-card">
         <div class="testimonial-content">
           <i class="fas fa-quote-left"></i>
-          <p>Servizio eccellente e professionale. Il mio giardino non è mai stato così bello!</p>
+          <p data-i18n="testimonial_1">Servizio eccellente e professionale. Il mio giardino non è mai stato così bello!
+          </p>
         </div>
         <div class="testimonial-author">
-          <span class="author-name">Maria B.</span>
-          <span class="author-title">Cliente Privato</span>
+          <span class="author-name" data-i18n="testimonial_1_author">Maria B.</span>
+          <span class="author-title" data-i18n="testimonial_1_role">Cliente Privato</span>
         </div>
       </div>
       <div class="testimonial-card">
         <div class="testimonial-content">
           <i class="fas fa-quote-left"></i>
-          <p>Pulizie impeccabili e personale sempre cortese e professionale.</p>
+          <p data-i18n="testimonial_2">Pulizie impeccabili e personale sempre cortese e professionale.</p>
         </div>
         <div class="testimonial-author">
-          <span class="author-name">Marco R.</span>
-          <span class="author-title">Ufficio Commerciale</span>
+          <span class="author-name" data-i18n="testimonial_2_author">Marco R.</span>
+          <span class="author-title" data-i18n="testimonial_2_role">Ufficio Commerciale</span>
         </div>
       </div>
     </div>
@@ -194,9 +240,9 @@
   <!-- Call to Action Section -->
   <section class="cta-section">
     <div class="cta-content">
-      <h2>Pronto a Trasformare i Tuoi Spazi?</h2>
-      <p>Contattaci oggi stesso per un preventivo gratuito</p>
-      <a href="pages/contatti.html" class="cta-button">Richiedi un Preventivo</a>
+      <h2 data-i18n="cta_title">Pronto a Trasformare i Tuoi Spazi?</h2>
+      <p data-i18n="cta_subtitle">Contattaci oggi stesso per un preventivo gratuito</p>
+      <a href="pages/contatti.html" class="cta-button" data-i18n="cta_button">Richiedi un Preventivo</a>
     </div>
   </section>
 
@@ -204,40 +250,41 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-section company-info">
-        <h3>Ecoprogram S.r.l.</h3>
-        <p>La tua scelta di fiducia per servizi di giardinaggio e pulizie professionali dal 2010.</p>
+        <h3 data-i18n="footer_company">Ecoprogram S.r.l.</h3>
+        <p data-i18n="footer_desc">La tua scelta di fiducia per servizi di giardinaggio e pulizie professionali dal
+          2010.</p>
         <div class="contact-info">
-          <p><i class="fas fa-map-marker-alt"></i> Via Example, 123 - Milano</p>
-          <p><i class="fas fa-phone"></i> +39 02 1234567</p>
-          <p><i class="fas fa-envelope"></i> info@ecoprogram.it</p>
-          <p><i class="fas fa-clock"></i> Lun - Ven: 8:00 - 18:00</p>
-          <p class="indent">Sab: 8:00 - 12:00</p>
+          <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">Via Example, 123 - Milano</span></p>
+          <p><i class="fas fa-phone"></i> <span data-i18n="footer_phone">+39 02 1234567</span></p>
+          <p><i class="fas fa-envelope"></i> <span data-i18n="footer_email">info@ecoprogram.it</span></p>
+          <p><i class="fas fa-clock"></i> <span data-i18n="footer_hours">Lun - Ven: 8:00 - 18:00</span></p>
+          <p class="indent" data-i18n="footer_hours_sat">Sab: 8:00 - 12:00</p>
         </div>
       </div>
 
       <div class="footer-section quick-links">
-        <h3>Link Rapidi</h3>
+        <h3 data-i18n="footer_quick_links">Link Rapidi</h3>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="pages/servizi.html">Servizi</a></li>
-          <li><a href="pages/galleria.html">Galleria</a></li>
-          <li><a href="pages/chi-siamo.html">Chi Siamo</a></li>
-          <li><a href="pages/contatti.html">Contatti</a></li>
+          <li><a href="#home" data-i18n="nav_home">Home</a></li>
+          <li><a href="pages/servizi.html" data-i18n="nav_services">Servizi</a></li>
+          <li><a href="pages/galleria.html" data-i18n="nav_gallery">Galleria</a></li>
+          <li><a href="pages/chi-siamo.html" data-i18n="nav_about">Chi Siamo</a></li>
+          <li><a href="pages/contatti.html" data-i18n="nav_contacts">Contatti</a></li>
         </ul>
       </div>
 
       <div class="footer-section services-links">
-        <h3>I Nostri Servizi</h3>
+        <h3 data-i18n="footer_our_services">I Nostri Servizi</h3>
         <ul>
-          <li><a href="pages/servizi.html#giardinaggio">Giardinaggio</a></li>
-          <li><a href="pages/servizi.html#pulizie">Pulizie</a></li>
-          <li><a href="pages/servizi.html#manutenzione">Manutenzione Verde</a></li>
-          <li><a href="pages/servizi.html#speciali">Servizi Speciali</a></li>
+          <li><a href="pages/servizi.html#giardinaggio" data-i18n="service_gardening">Giardinaggio</a></li>
+          <li><a href="pages/servizi.html#pulizie" data-i18n="service_cleaning">Pulizie</a></li>
+          <li><a href="pages/servizi.html#manutenzione" data-i18n="service_maintenance">Manutenzione Verde</a></li>
+          <li><a href="pages/servizi.html#speciali" data-i18n="service_special">Servizi Speciali</a></li>
         </ul>
       </div>
 
       <div class="footer-section social">
-        <h3>Seguici</h3>
+        <h3 data-i18n="footer_follow_us">Seguici</h3>
         <div class="social-links">
           <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
           <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -248,11 +295,12 @@
 
     <div class="footer-bottom">
       <div class="footer-bottom-content">
-        <p>&copy; 2024 Ecoprogram S.r.l. - P.IVA 12345678901 - Tutti i diritti riservati</p>
+        <p data-i18n="footer_copyright">&copy; 2024 Ecoprogram S.r.l. - P.IVA 12345678901 - Tutti i diritti riservati
+        </p>
         <div class="footer-bottom-links">
-          <a href="pages/privacy-policy.html">Privacy Policy</a>
-          <a href="pages/termini-condizioni.html">Termini e Condizioni</a>
-          <a href="pages/cookie-policy.html">Cookie Policy</a>
+          <a href="pages/privacy-policy.html" data-i18n="footer_privacy">Privacy Policy</a>
+          <a href="pages/termini-condizioni.html" data-i18n="footer_terms">Termini e Condizioni</a>
+          <a href="pages/cookie-policy.html" data-i18n="footer_cookies">Cookie Policy</a>
         </div>
       </div>
     </div>
@@ -260,6 +308,13 @@
 
   <!-- Scripts -->
   <script src="script/app.js"></script>
+  <script>
+    // Initialize language manager
+    document.addEventListener('DOMContentLoaded', () => {
+      const languageManager = new LanguageManager();
+      languageManager.init();
+    });
+  </script>
 </body>
 
 </html>
